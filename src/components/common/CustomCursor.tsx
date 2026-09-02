@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useSyncExternalStore } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 
 function subscribePointer(callback: () => void) {
@@ -34,7 +35,20 @@ export default function CustomCursor() {
 
     const onMouseDown = () => setIsClicking(true);
     const onMouseUp = () => setIsClicking(false);
-    const onMouseLeave = () => setIsVisible(false);
+
+    const onMouseLeave = (e: MouseEvent) => {
+      // Only hide if the cursor truly exits the browser viewport bounds
+      if (
+        !e.relatedTarget &&
+        (e.clientY <= 0 ||
+          e.clientX <= 0 ||
+          e.clientX >= window.innerWidth ||
+          e.clientY >= window.innerHeight)
+      ) {
+        setIsVisible(false);
+      }
+    };
+
     const onMouseEnter = () => setIsVisible(true);
 
     const handleHoverCheck = (e: MouseEvent) => {
@@ -65,46 +79,49 @@ export default function CustomCursor() {
     };
   }, [hasFinePointer]);
 
-  if (!hasFinePointer || !isVisible) return null;
+  if (!hasFinePointer || !isVisible || typeof document === 'undefined') {
+    return null;
+  }
 
-  return (
-    <>
+  return createPortal(
+    <div className="pointer-events-none fixed inset-0 z-[999999] overflow-hidden">
       {/* Precision Follower Ring - Minimalist & Non-intrusive */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-[#6E8FC7]/40"
+        className="fixed top-0 left-0 pointer-events-none rounded-full border border-[#6E8FC7]/50"
         animate={{
-          x: mousePosition.x - (isHovered ? 20 : 14),
-          y: mousePosition.y - (isHovered ? 20 : 14),
-          width: isHovered ? 40 : 28,
-          height: isHovered ? 40 : 28,
-          backgroundColor: isHovered ? 'rgba(110, 143, 199, 0.08)' : 'transparent',
-          borderColor: isHovered ? 'rgba(110, 143, 199, 0.65)' : 'rgba(110, 143, 199, 0.25)',
-          scale: isClicking ? 0.9 : 1
+          x: mousePosition.x - (isHovered ? 18 : 12),
+          y: mousePosition.y - (isHovered ? 18 : 12),
+          width: isHovered ? 36 : 24,
+          height: isHovered ? 36 : 24,
+          backgroundColor: isHovered ? 'rgba(110, 143, 199, 0.1)' : 'transparent',
+          borderColor: isHovered ? 'rgba(110, 143, 199, 0.8)' : 'rgba(110, 143, 199, 0.35)',
+          scale: isClicking ? 0.85 : 1
         }}
         transition={{
           type: 'spring',
-          damping: 26,
-          stiffness: 320,
-          mass: 0.4
+          damping: 24,
+          stiffness: 350,
+          mass: 0.35
         }}
       />
 
-      {/* Center Micro Dot */}
+      {/* Center Micro Dot - Off-white for high visibility */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full bg-[#A8B0BD]"
+        className="fixed top-0 left-0 pointer-events-none rounded-full bg-[#F1F3F5] shadow-sm shadow-black/50"
         animate={{
           x: mousePosition.x - 2.5,
           y: mousePosition.y - 2.5,
-          scale: isClicking ? 0.7 : isHovered ? 1.2 : 1
+          scale: isClicking ? 0.6 : isHovered ? 1.25 : 1
         }}
         transition={{
           type: 'spring',
           damping: 35,
-          stiffness: 600,
-          mass: 0.12
+          stiffness: 650,
+          mass: 0.1
         }}
         style={{ width: 5, height: 5 }}
       />
-    </>
+    </div>,
+    document.body
   );
 }
