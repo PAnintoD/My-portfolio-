@@ -7,6 +7,7 @@ import MagneticButton from '../common/MagneticButton';
 import { useLanguage } from '../../context/LanguageContext';
 import { personalInfo, uiContent } from '../../data/portfolioData';
 import { Sparkles, FolderGit2, Mail } from 'lucide-react';
+import { GithubIcon } from '../common/BrandIcons';
 
 export default function HeroSection() {
   const { t } = useLanguage();
@@ -118,11 +119,16 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto"
         >
           <MagneticButton href="#projects" variant="primary">
             <FolderGit2 className="w-4 h-4" />
             <span>{t(uiContent.hero.viewWork)}</span>
+          </MagneticButton>
+
+          <MagneticButton href="https://github.com/PAnintoD" external={true} variant="glass">
+            <GithubIcon className="w-4 h-4" />
+            <span>{t(uiContent.hero.viewGithub)}</span>
           </MagneticButton>
 
           <MagneticButton href="#contact" variant="outline">

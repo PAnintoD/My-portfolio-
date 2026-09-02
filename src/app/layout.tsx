@@ -16,39 +16,43 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Kittiphat Wongsuwan // Senior Creative Frontend Developer & UI/UX Designer',
+  title: 'ธนภูมิ สีแดง (Thanapoom Sidaeng) // Software, Automation & AI Vision Developer',
   description:
-    'Award-winning portfolio of Kittiphat Wongsuwan. Blending futuristic minimalism, production-grade Next.js, and immersive 3D Three.js WebGL experiences.',
+    'Portfolio ของ ธนภูมิ สีแดง (Thanapoom Sidaeng / PAnintoD) - นักพัฒนาซอฟต์แวร์, ระบบอัตโนมัติ (Automation), AI Computer Vision (YOLOv8, OCR) และการเชื่อมต่อฮาร์ดแวร์ IoT',
   keywords: [
-    'Creative Developer',
-    'Senior Frontend Developer',
-    'UI/UX Designer',
-    'Three.js Portfolio',
-    'Next.js 16',
-    'React 19',
-    'WebGL Developer',
-    'Full Stack Designer',
-    'Bangkok Developer'
+    'Thanapoom Sidaeng',
+    'ธนภูมิ สีแดง',
+    'PAnintoD',
+    'Software Developer Thailand',
+    'AI Computer Vision',
+    'YOLOv8',
+    'EasyOCR',
+    'C# WinForms',
+    'Arduino IoT',
+    'React',
+    'Firebase POS',
+    'n8n Automation',
+    'Linux Ubuntu'
   ],
-  authors: [{ name: 'Kittiphat Wongsuwan', url: 'https://github.com/kittiphat-dev' }],
-  creator: 'Kittiphat Wongsuwan',
-  metadataBase: new URL('https://portfolio-kittiphat.vercel.app'),
+  authors: [{ name: 'Thanapoom Sidaeng', url: 'https://github.com/PAnintoD' }],
+  creator: 'Thanapoom Sidaeng',
+  metadataBase: new URL('https://my-portfolio-panintod.vercel.app'),
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    alternateLocale: 'th_TH',
-    url: 'https://portfolio-kittiphat.vercel.app',
-    title: 'Kittiphat Wongsuwan // Senior Creative Developer',
+    locale: 'th_TH',
+    alternateLocale: 'en_US',
+    url: 'https://my-portfolio-panintod.vercel.app',
+    title: 'ธนภูมิ สีแดง (Thanapoom Sidaeng) // Software, Automation & AI Vision Developer',
     description:
-      'Immersive creative developer portfolio featuring real-time 3D WebGL, micro-interactions, and futuristic minimalism.',
-    siteName: 'Kittiphat Wongsuwan Portfolio'
+      'นักพัฒนาที่เน้นการลงมือสร้างจริง ถนัดการเชื่อมต่อซอฟต์แวร์เข้ากับฮาร์ดแวร์ IoT, การประมวลผลภาพด้วย AI และการพัฒนาระบบหลังบ้าน',
+    siteName: 'Thanapoom Sidaeng Portfolio'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kittiphat Wongsuwan // Creative Developer',
+    title: 'Thanapoom Sidaeng // Software & AI Vision Developer',
     description:
-      'Immersive creative developer portfolio featuring real-time 3D WebGL and futuristic minimalism.',
-    creator: '@kittiphat_dev'
+      'Hands-on builder bridging software, IoT microcontrollers, and real-time AI computer vision.',
+    creator: '@PAnintoD'
   },
   robots: {
     index: true,
@@ -62,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth dark`}>
+    <html lang="th" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth dark`}>
       <head>
         {/* Structured Data for SEO / Personal Schema */}
         <script
@@ -71,25 +75,27 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Kittiphat Wongsuwan',
-              alternateName: 'Kai',
-              jobTitle: 'Senior Creative Frontend Developer & UI/UX Designer',
-              url: 'https://portfolio-kittiphat.vercel.app',
+              name: 'ธนภูมิ สีแดง',
+              alternateName: 'Thanapoom Sidaeng',
+              jobTitle: 'Software, Automation & AI Vision Developer',
+              url: 'https://my-portfolio-panintod.vercel.app',
               sameAs: [
-                'https://github.com/kittiphat-dev',
-                'https://linkedin.com/in/kittiphat-wongsuwan',
-                'https://twitter.com/kittiphat_dev'
+                'https://github.com/PAnintoD',
+                'https://github.com/PAnintoD/My-portfolio-'
               ],
               knowsAbout: [
-                'Next.js',
+                'Python',
+                'C# (.NET WinForms)',
+                'JavaScript',
+                'Lua',
+                'YOLOv8',
+                'EasyOCR',
+                'OpenCV',
+                'Arduino & Hardware IoT',
                 'React',
-                'TypeScript',
-                'Three.js',
-                'WebGL',
-                'Tailwind CSS',
-                'UI/UX Design',
-                'Design Systems',
-                'Motion Design'
+                'Firebase',
+                'n8n Workflow Automation',
+                'Linux (Ubuntu)'
               ]
             })
           }}

@@ -66,7 +66,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-violet-600 p-[1.5px] shadow-[0_0_30px_rgba(0,245,212,0.3)]">
                 <div className="w-full h-full bg-[#080c16] rounded-2xl flex items-center justify-center">
                   <span className="font-mono text-2xl font-black bg-gradient-to-r from-cyan-300 via-white to-violet-300 bg-clip-text text-transparent">
-                    KW
+                    TS
                   </span>
                 </div>
               </div>

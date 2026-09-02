@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-violet-600 p-[1px]">
                 <div className="w-full h-full bg-[#05070e] rounded-lg flex items-center justify-center font-mono font-black text-xs text-cyan-300">
-                  KW
+                  TS
                 </div>
               </div>
               <span className="font-bold text-sm tracking-wider text-white">

@@ -2,116 +2,110 @@ import { PersonalInfo, Project, SkillCategory, ExperienceItem, NavItem } from '.
 
 export const personalInfo: PersonalInfo = {
   name: {
-    th: "กิตติภัทร วงศ์สุวรรณ",
-    en: "Kittiphat Wongsuwan"
+    th: "ธนภูมิ สีแดง",
+    en: "Thanapoom Sidaeng"
   },
   nickname: {
-    th: "กาย",
-    en: "Kai"
+    th: "PAnintoD",
+    en: "PAnintoD"
   },
   role: {
-    th: "Senior Creative Frontend Developer",
-    en: "Senior Creative Frontend Developer"
+    th: "Software, Automation & AI Vision Developer",
+    en: "Software, Automation & AI Vision Developer"
   },
   secondaryRole: {
-    th: "Award-Winning UI/UX Designer & Creative Technologist",
-    en: "Award-Winning UI/UX Designer & Creative Technologist"
+    th: "นักพัฒนาซอฟต์แวร์, ระบบอัตโนมัติ (Automation) และ AI/Computer Vision",
+    en: "Software Engineer • IoT & Hardware Interfacing • AI Computer Vision"
   },
   heroTagline: {
-    th: "สร้างสรรค์ประสบการณ์ดิจิทัลที่หลอมรวมศิลปะสุนทรียภาพแห่งอนาคต โค้ดวิศวกรรมระดับโปรดักชัน และ 3D Interactive WebGL ที่น่าหลงใหล",
-    en: "Crafting boundary-pushing digital experiences at the intersection of futuristic aesthetics, production-grade engineering, and immersive 3D WebGL."
+    th: "นักพัฒนาที่เน้นการลงมือสร้างจริง ถนัดการเชื่อมต่อซอฟต์แวร์เข้ากับฮาร์ดแวร์ IoT, การประมวลผลภาพด้วย AI (Computer Vision) และการพัฒนาระบบหลังบ้านแบบครบวงจร",
+    en: "Pragmatic developer dedicated to building real-world solutions. Specialized in hardware IoT bridging, real-time AI computer vision, and robust backend automation systems."
   },
   aboutBio: [
     {
-      th: "ผมเป็น Creative Developer และ UI/UX Designer ผู้หลงใหลใน Micro-interactions, 3D Web Graphics และ Motion Design ที่ลื่นไหล มีประสบการณ์กว่า 6 ปีในการร่วมงานกับ Tech Startups, Digital Agencies ชั้นนำ และแบรนด์ระดับนานาชาติในการเปลี่ยนไอเดียให้กลายเป็น Product จริงที่ทั้งสวยงามและทรงพลัง",
-      en: "I am a Creative Developer and UI/UX Designer obsessed with micro-interactions, 3D web graphics, and buttery-smooth motion design. With 6+ years of experience collaborating with high-growth startups, top-tier design studios, and global enterprises, I bridge the gap between design vision and robust software engineering."
+      th: "ผมคือ ธนภูมิ สีแดง (Thanapoom Sidaeng) นักพัฒนาที่มุ่งเน้น 'การลงมือสร้างจริงและแก้ปัญหาที่เกิดขึ้นจริง' มีความเชี่ยวชาญในการเชื่อมต่อโลกของซอฟต์แวร์เข้ากับฮาร์ดแวร์จริง ตั้งแต่การเขียนโปรแกรมควบคุมไมโครคอนโทรลเลอร์ Arduino ผ่าน Serial Port ไปจนถึงการพัฒนาระบบตรวจจับภาพด้วย AI และการสร้าง Web Application ที่ตอบโจทย์การใช้งาน",
+      en: "I am Thanapoom Sidaeng (PAnintoD), a pragmatic developer driven by hands-on engineering and real-world problem solving. My expertise bridges software logic with physical hardware — ranging from serial-driven Arduino microcontroller control and AI computer vision pipelines to responsive web applications and automated workflows."
     },
     {
-      th: "หลักการทำงานของผมคือ 'Futuristic Minimalism' — การผสมผสานความเรียบง่าย คลีน อ่านง่าย เข้ากับลูกเล่นเทคโนโลยีล้ำสมัย มุ่งเน้น Performance คะแนน Lighthouse สูง การเข้าถึง (Accessibility) และรองรับทุกขนาดหน้าจออย่างไร้รอยต่อ",
-      en: "My design philosophy centers on 'Futuristic Minimalism' — merging ultra-clean legibility and generous negative space with avant-garde interactive technology. I prioritize 60fps performance, stellar Lighthouse scores, accessibility (WCAG), and responsive finesse."
+      th: "สไตล์การทำงานของผมคือ 'Modern Tech, Clean & High Performance' เน้นโค้ดที่มีเสถียรภาพ ทำงานได้รวดเร็ว ไม่ซับซ้อนเกินจำเป็น สามารถทำงานอัตโนมัติตลอด 24/7 และพร้อมต่อยอดเข้ากับระบบอุตสาหกรรมหรือธุรกิจได้จริง",
+      en: "My development philosophy focuses on 'Modern Tech, Clean & High Performance' — writing stable, fast, unbloated code engineered for continuous 24/7 reliability across edge devices, desktops, and cloud environments."
     }
   ],
   location: {
-    th: "กรุงเทพมหานคร, ประเทศไทย (พร้อมทำงาน Remote ทั่วโลก)",
-    en: "Bangkok, Thailand (Available for Global Remote & Hybrid)"
+    th: "ประเทศไทย (พร้อมทำงาน Remote & On-site)",
+    en: "Thailand (Available for Remote & On-site Contracts)"
   },
   status: {
-    th: "พร้อมรับงานโปรเจกต์ใหม่ & Freelance",
-    en: "Available for Q3/Q4 Projects & High-Impact Contracts"
+    th: "พร้อมรับงานพัฒนาซอฟต์แวร์, ระบบ IoT & AI Vision",
+    en: "Available for Software, IoT & AI Vision Projects"
   },
-  email: "kittiphat.creative@gmail.com",
-  github: "https://github.com/kittiphat-dev",
-  linkedin: "https://linkedin.com/in/kittiphat-wongsuwan",
+  email: "sidaengthnphumi082@gmail.com",
+  github: "https://github.com/PAnintoD",
+  linkedin: "https://github.com/PAnintoD",
   stats: [
     {
-      value: "6+",
+      value: "4+",
       label: {
-        th: "ปีแห่งประสบการณ์",
-        en: "Years of Experience"
+        th: "Core Tech Domains",
+        en: "Core Tech Domains"
       },
       sublabel: {
-        th: "Creative & Engineering",
-        en: "Creative & Engineering"
+        th: "AI, IoT, Web & Automation",
+        en: "AI, IoT, Web & Automation"
       }
     },
     {
-      value: "45+",
+      value: "99%+",
       label: {
-        th: "โปรเจกต์ที่ส่งมอบ",
-        en: "Shipped Projects"
+        th: "AI Detection Accuracy",
+        en: "AI Detection Accuracy"
       },
       sublabel: {
-        th: "Production Ready",
-        en: "Production Ready"
+        th: "YOLOv8 + EasyOCR Pipeline",
+        en: "YOLOv8 + EasyOCR Pipeline"
       }
     },
     {
-      value: "8+",
+      value: "100%",
       label: {
-        th: "รางวัล & การยอมรับ",
-        en: "Design & Dev Awards"
+        th: "Hands-on Hardware Sync",
+        en: "Hands-on Hardware Sync"
       },
       sublabel: {
-        th: "Awwwards / FWA / CSSDA",
-        en: "Awwwards / FWA Nominee"
+        th: "Arduino, Relays & Sensors",
+        en: "Arduino, Relays & Sensors"
       }
     },
     {
-      value: "99.8%",
+      value: "24/7",
       label: {
-        th: "ความพึงพอใจของลูกค้า",
-        en: "Client Satisfaction"
+        th: "Automation Workflows",
+        en: "Automation Workflows"
       },
       sublabel: {
-        th: "จาก 30+ องค์กรชั้นนำ",
-        en: "From 30+ Global Clients"
+        th: "n8n & Real-time Daemon Jobs",
+        en: "n8n & Real-time Daemon Jobs"
       }
     }
   ],
   socials: [
     {
       platform: "GitHub",
-      url: "https://github.com/kittiphat-dev",
-      username: "@kittiphat-dev",
+      url: "https://github.com/PAnintoD",
+      username: "@PAnintoD",
       iconName: "Github"
     },
     {
-      platform: "LinkedIn",
-      url: "https://linkedin.com/in/kittiphat-wongsuwan",
-      username: "Kittiphat Wongsuwan",
-      iconName: "Linkedin"
+      platform: "Email",
+      url: "mailto:sidaengthnphumi082@gmail.com",
+      username: "sidaengthnphumi082@gmail.com",
+      iconName: "Mail"
     },
     {
-      platform: "X / Twitter",
-      url: "https://twitter.com/kittiphat_dev",
-      username: "@kittiphat_dev",
-      iconName: "Twitter"
-    },
-    {
-      platform: "Dribbble",
-      url: "https://dribbble.com/kittiphat",
-      username: "kittiphat",
-      iconName: "Dribbble"
+      platform: "Repository",
+      url: "https://github.com/PAnintoD/My-portfolio-",
+      username: "My-portfolio-",
+      iconName: "Github"
     }
   ]
 };
@@ -129,7 +123,7 @@ export const navItems: NavItem[] = [
   },
   {
     id: "skills",
-    label: { th: "ทักษะและความเชี่ยวชาญ", en: "Skills" },
+    label: { th: "ทักษะความเชี่ยวชาญ", en: "Skills" },
     href: "#skills"
   },
   {
@@ -139,7 +133,7 @@ export const navItems: NavItem[] = [
   },
   {
     id: "experience",
-    label: { th: "ประสบการณ์", en: "Experience" },
+    label: { th: "เส้นทางประสบการณ์", en: "Experience" },
     href: "#experience"
   },
   {
@@ -151,432 +145,344 @@ export const navItems: NavItem[] = [
 
 export const projects: Project[] = [
   {
-    id: "aetheria-audio",
-    title: "Aetheria Spatial Audio",
+    id: "ai-license-plate",
+    title: "AI License Plate Recognition",
     tagline: {
-      th: "เว็บแอปพลิเคชัน 3D WebGL สร้างคลื่นเสียงแบบอินเทอร์แอคทีฟแบบเรียลไทม์",
-      en: "Real-time 3D WebGL spatial sound visualizer and generative synthesizer"
+      th: "ระบบตรวจจับและอ่านค่าป้ายทะเบียนรถอัตโนมัติแบบเรียลไทม์ด้วย YOLOv8 ร่วมกับ EasyOCR",
+      en: "Real-time automated license plate detection and character recognition pipeline using YOLOv8 & EasyOCR"
     },
     category: {
-      th: "Creative WebGL / 3D Audio",
-      en: "Creative WebGL / 3D Audio"
+      th: "AI & Computer Vision",
+      en: "AI & Computer Vision"
     },
     description: {
-      th: "ระบบจำลองและแสดงผลคลื่นเสียง 3 มิติในเบราว์เซอร์ ประมวลผล Web Audio API ร่วมกับ Three.js Custom GLSL Shaders ตอบสนองต่อคลื่นเสียงแบบ 60fps",
-      en: "Browser-based 3D spatial audio visualizer combining Web Audio API with Three.js custom GLSL shaders, delivering fluid 60fps reactive acoustics."
+      th: "ใช้โมเดล Deep Learning YOLOv8 สำหรับตรวจหาตำแหน่งกรอบป้ายทะเบียนรถจากสตรีมกล้อง จากนั้นประมวลผลภาพ (Image Preprocessing) และส่งต่อให้ EasyOCR อ่านตัวอักษรและตัวเลขภาษาไทยได้อย่างรวดเร็วและแม่นยำ",
+      en: "A computer vision solution deploying YOLOv8 object detection to locate license plates, coupled with OpenCV preprocessing and EasyOCR to reliably extract Thai alphanumeric characters from live video feeds."
     },
     fullOverview: {
-      th: "Aetheria Audio ถูกออกแบบเพื่อทดลองขีดจำกัดของ Web Audio API และ Three.js Shaders โดยแปลงคลื่นความถี่เสียงเป็นรูปทรง Mesh พลวัตแบบอินเทอร์แอคทีฟ ผู้ใช้สามารถปรับแต่ง Reverb, Spatial Panning และความหนาแน่นของอนุภาคได้ตามใจชอบ พร้อมส่งออกการตั้งค่าเป็น Audio Preset",
-      en: "Aetheria Audio pushes the boundaries of Web Audio API and procedural Three.js shaders, translating acoustic frequencies into dynamic geometry. Users can modulate reverb, spatial panning, and particle density in real time, saving customized auditory environments."
+      th: "ระบบ AI License Plate Recognition ถูกสร้างขึ้นเพื่อตอบโจทย์งานควบคุมการเข้า-ออกยานพาหนะอัจฉริยะ (Smart Parking / Security Gate) โดยระบบจะดึงภาพจากกล้อง เข้าสู่โมเดล YOLOv8 เพื่อตีกรอบป้ายทะเบียนรถยนต์ จากนั้นทำ Image Preprocessing ด้วย OpenCV (แปลงเป็นขาวดำ Grayscale, ลดสัญญาณรบกวน Bilateral Filter, และปรับความคมชัด Adaptive Threshold) เพื่อให้ EasyOCR อ่านค่าได้อย่างแม่นยำที่สุด แม้ในสภาพแสงน้อยหรือมุมกล้องที่เอียง",
+      en: "Developed for intelligent vehicle access monitoring and security logging. The pipeline captures live camera frames, applies a tuned YOLOv8 model for bounding-box plate localization, executes adaptive thresholding and grayscale normalization via OpenCV, and feeds cropped targets into EasyOCR for instantaneous alphanumeric parsing."
     },
     challenges: [
       {
-        th: "การซิงค์ข้อมูล Fourier Transform จาก Web Audio API เข้าสู่ Custom Vertex Shader โดยไม่ทำให้เฟรมเรตตก",
-        en: "Synchronizing FFT frequency buffers from Web Audio API into custom vertex shaders without inducing frame drops."
+        th: "การตรวจจับป้ายทะเบียนในสภาพแสงน้อย แสงสะท้อนจากไฟหน้ารถ หรือป้ายทะเบียนที่มีฝุ่นละอองและรอยขีดข่วน",
+        en: "Detecting license plates under low-light conditions, headlight glare, or partial physical occlusion."
       },
       {
-        th: "การรักษาประสิทธิภาพ 60fps บนอุปกรณ์พกพาที่มี GPU จำกัด",
-        en: "Maintaining consistent 60fps on mobile devices with constrained GPU resources."
+        th: "การรักษาความเร็วการประมวลผล (FPS) ให้รองรับสตรีมภาพต่อเนื่องโดยไม่ทำให้เครื่องค้าง",
+        en: "Optimizing multi-stage neural inference to sustain real-time video framerates without CPU/GPU choking."
       }
     ],
     solutions: [
       {
-        th: "ใช้ DataTexture ในการส่งค่า Frequency Bin เข้า GPU โดยตรง ลด Overhead บน JavaScript Main Thread",
-        en: "Employed floating-point DataTextures to pipe frequency bins straight to the GPU, bypassing main-thread CPU bottlenecks."
+        th: "สร้าง Custom Preprocessing Pipeline ปรับ Contrast และ Perspective Correction อัตโนมัติก่อนส่งเข้า OCR",
+        en: "Engineered an automated OpenCV preprocessing pipeline featuring contrast adjustment and perspective unwarping prior to OCR."
       },
       {
-        th: "สร้าง Level of Detail (LOD) อัจฉริยะ ปรับลดจำนวนจุด Mesh อัตโนมัติตาม Hardware Concurrency",
-        en: "Implemented an adaptive Level of Detail (LOD) system that dynamically adjusts particle counts based on device capability."
+        th: "แยกการประมวลผลเป็น Multi-threading และใช้ Motion Trigger Detection เพื่อรันโมเดลเฉพาะเมื่อมีรถเคลื่อนไหว",
+        en: "Segregated frame acquisition and inference into decoupled worker threads, activating full OCR only upon motion triggers."
       }
     ],
-    techStack: ["Next.js", "Three.js", "GLSL Shaders", "Web Audio API", "TypeScript", "Tailwind CSS"],
-    metrics: "+140% User Session Time • FWA Site of the Day Nominee",
-    liveUrl: "https://aetheria-audio-demo.vercel.app",
-    githubUrl: "https://github.com/kittiphat-dev/aetheria-audio",
+    techStack: ["Python", "YOLOv8", "EasyOCR", "OpenCV", "PyTorch", "NumPy"],
+    metrics: "Sub-second OCR • High Recognition Accuracy",
+    liveUrl: "https://github.com/PAnintoD",
+    githubUrl: "https://github.com/PAnintoD",
     featured: true,
     accentColor: "#00F5D4",
     gradient: "from-teal-500/20 via-cyan-500/10 to-transparent",
-    year: "2025",
+    year: "2024",
     role: {
-      th: "Lead Creative Developer & UI Architect",
-      en: "Lead Creative Developer & UI Architect"
+      th: "AI & Computer Vision Developer",
+      en: "AI & Computer Vision Developer"
     }
   },
   {
-    id: "nexus-protocol",
-    title: "Nexus Decentralized Exchange",
+    id: "smart-gate-iot",
+    title: "ระบบประตูอัจฉริยะ Smart Gate",
     tagline: {
-      th: "แพลตฟอร์มเทรดดิ้งยุคอนาคตด้วยดีไซน์ Futuristic Glassmorphism และ Real-time WebSocket",
-      en: "Futuristic institutional trading terminal with real-time WebSockets and sub-millisecond chart rendering"
+      th: "โปรแกรมควบคุมฮาร์ดแวร์เปิด-ปิดประตูและอุปกรณ์ Arduino ผ่านคอมพิวเตอร์ พัฒนาด้วย C# WinForms",
+      en: "Hardware-interfaced gate automation & sensor control software communicating with Arduino via C# WinForms"
     },
     category: {
-      th: "FinTech / High-Frequency Dashboard",
-      en: "FinTech / High-Frequency Dashboard"
+      th: "Software & Hardware IoT",
+      en: "Software & Hardware IoT"
     },
     description: {
-      th: "แดชบอร์ดการเงินและการเทรดระดับสถาบัน โดดเด่นด้วย Dark Minimalist Layout, กราฟเชิงโต้ตอบความเร็วสูง และสถาปัตยกรรม WebSocket ที่อัปเดตข้อมูลราคาระดับมิลลิวินาที",
-      en: "An institutional-grade trading interface boasting futuristic dark glassmorphism, hyper-fast canvas charting, and zero-latency WebSocket live updates."
+      th: "ซอฟต์แวร์บริหารจัดการและควบคุมระบบประตูอัตโนมัติ สื่อสารผ่าน Serial COM Port เชื่อมต่อกับบอร์ด Arduino ควบคุมรีเลย์ เซนเซอร์ตรวจจับสิ่งกีดขวาง และมอเตอร์ขับเคลื่อน",
+      en: "A desktop control hub orchestrating motorized gates and safety sensors by transmitting structured serial commands to Arduino microcontrollers with fail-safe telemetry."
     },
     fullOverview: {
-      th: "Nexus Protocol สร้างขึ้นเพื่อลบภาพจำของแดชบอร์ดหุ้นที่ซับซ้อนและเชย ด้วยการนำเสนออินเทอร์เฟซแบบโมดูลาร์ ผู้ใช้สามารถปรับเปลี่ยนเลย์เอาต์ตามสไตล์การเทรด พร้อมระบบแจ้งเตือนอัจฉริยะ และการประมวลผลออเดอร์บุ๊ค 10,000+ รายการต่อวินาที",
-      en: "Nexus Protocol reimagines financial terminals with an ultra-sleek, modular workspace. Traders customize widget layouts effortlessly while observing 10,000+ live order-book transactions per second via hardware-accelerated Canvas rendering."
+      th: "โปรเจกต์นี้พัฒนาขึ้นด้วยภาษา C# บนแพลตฟอร์ม Windows Forms เพื่อเป็นหน้าจอคอนโซลควบคุมสำหรับเจ้าหน้าที่รักษาความปลอดภัย สามารถสั่งเปิด-ปิดประตูแบบ Manual, โหมดเปิดค้าง, โหมดล็อคฉุกเฉิน และตรวจจับสัญญาณความปลอดภัยจากเซนเซอร์ Infrared/Inductive Loop เชื่อมต่อกับ Arduino ผ่านสาย Serial Port พร้อมระบบแจ้งเตือนสถานะการเชื่อมต่อ และเก็บบันทึก Log ประวัติการเปิด-ปิดประตู",
+      en: "Engineered in C# .NET Windows Forms to deliver a resilient desktop interface for facility operators. Connects directly to Arduino boards over USB/Serial communication, driving multi-channel relays for motor rotation, reading sensor states, handling emergency overrides, and writing persistent operation audit logs."
     },
     challenges: [
       {
-        th: "การเรนเดอร์กราฟแท่งเทียนและ Depth Chart แบบเรียลไทม์โดย React ไม่เกิด Re-render ที่ไม่จำเป็น",
-        en: "Rendering high-frequency candlestick and depth charts without triggering cascading React re-renders."
+        th: "สัญญาณรบกวนในสายสัญญาณ Serial Communication และเหตุการณ์สายหลุดระหว่างการทำงาน",
+        en: "Preventing serial communication drops and buffer corruptions from environmental electromagnetic noise."
       },
       {
-        th: "การจัดการ State จัดเก็บข้อมูลขนาดใหญ่ในระดับ Global Memory",
-        en: "Managing high-volume streaming state with strict memory leak prevention."
+        th: "การป้องกันคำสั่งทำงานซ้ำซ้อนหรือติดขัดในกรณีที่ฮาร์ดแวร์ยังหมุนไม่เสร็จสิ้น",
+        en: "Preventing command re-entrancy and state desynchronization while motor actuation is in progress."
       }
     ],
     solutions: [
       {
-        th: "สร้าง Custom Canvas Engine แยกออกจาก React Tree ควบคุมผ่าน Zustand Transient Subscriptions",
-        en: "Engineered an isolated HTML5 Canvas charting renderer governed by Zustand transient state subscriptions."
+        th: "ออกแบบ Custom Packet Protocol พร้อมระบบ Auto-reconnect อัตโนมัติเมื่อสายเชื่อมต่อกลับมา",
+        en: "Devised a packet-framed serial protocol with heartbeat validation and self-healing auto-reconnect routines."
       },
       {
-        th: "ใช้ Virtualized List ร่วมกับ Web Workers ในการคำนวณและกรองข้อมูลธุรกรรม",
-        en: "Utilized Web Workers to offload heavy aggregation arithmetic and virtualized lists for smooth scrolling."
+        th: "นำ State Machine และ Event Handlers มาควบคุมลำดับการทำงานและ Interlock ด้านความปลอดภัย",
+        en: "Implemented a finite state machine in C# to strictly enforce mechanical interlocks and prevent race conditions."
       }
     ],
-    techStack: ["Next.js App Router", "TypeScript", "Tailwind CSS", "Zustand", "HTML5 Canvas", "WebSockets"],
-    metrics: "45K+ Daily Active Users • 99.99% Uptime",
-    liveUrl: "https://nexus-dex-preview.vercel.app",
-    githubUrl: "https://github.com/kittiphat-dev/nexus-protocol",
+    techStack: ["C#", ".NET WinForms", "Arduino", "Serial Port (UART)", "IoT", "Relay Control"],
+    metrics: "Zero Packet Loss • Real-time Hardware Telemetry",
+    liveUrl: "https://github.com/PAnintoD",
+    githubUrl: "https://github.com/PAnintoD",
     featured: true,
     accentColor: "#8B5CF6",
     gradient: "from-purple-500/20 via-indigo-500/10 to-transparent",
     year: "2024",
     role: {
-      th: "Senior Frontend Engineer & Design System Lead",
-      en: "Senior Frontend Engineer & Design System Lead"
+      th: "Software & Embedded Systems Developer",
+      en: "Software & Embedded Systems Developer"
     }
   },
   {
-    id: "cyberpulse-ai",
-    title: "CyberPulse Studio AI",
+    id: "badminton-pos-web",
+    title: "เว็บจองคอร์ดแบดมินตัน & ระบบ POS",
     tagline: {
-      th: "Generative AI Canvas สำหรับนักออกแบบและคอนเทนต์ครีเอเตอร์",
-      en: "Infinite generative canvas & multi-modal AI co-pilot for high-velocity design teams"
+      th: "Web Application สำหรับบริหารคิวสนามแบดมินตัน พร้อมระบบขายหน้าร้าน (POS) เชื่อมต่อ Firebase Realtime",
+      en: "Real-time badminton court reservation web app integrated with full point-of-sale inventory on React & Firebase"
     },
     category: {
-      th: "AI Platform / Infinite Canvas",
-      en: "AI Platform / Infinite Canvas"
+      th: "Full-Stack Web & POS",
+      en: "Full-Stack Web & POS"
     },
     description: {
-      th: "ผืนผ้าใบอินฟินิทสำหรับสั่งการ AI ปรับแต่งภาพ เวกเตอร์ และเนื้อหาได้แบบอิสระ รองรับ Node-based Workflow และการร่วมมือกันแบบ Real-time",
-      en: "An infinite collaborative canvas empowering designers to generate, edit, and orchestrate multi-modal AI workflows with intuitive node-based graphs."
+      th: "ระบบบริหารจัดการสนามแบดมินตันแบบครบวงจร รองรับการจองสนามออนไลน์แบบเรียลไทม์ ป้องกันการจองชนกัน และมีระบบขายหน้าร้าน (POS) สำหรับคิดเงินค่าเครื่องดื่ม อุปกรณ์กีฬา และสรุปยอดขายประจำวัน",
+      en: "A comprehensive digital arena management platform featuring live court availability, automated conflict-free slot scheduling, and integrated point-of-sale cash register with Firebase synchronization."
     },
     fullOverview: {
-      th: "CyberPulse เชื่อมโยงโมเดล Diffusion และ LLM เข้าสู่อินเทอร์เฟซแบบ Visual Node Canvas คล้ายกับโปรแกรมระดับโปร ช่วยให้ครีเอทีฟสามารถต่อยอดไอเดีย เชื่อมท่อการสร้างภาพและข้อความได้อย่างอิสระ มีระบบ History Scrubbing และ Versioning ที่แม่นยำ",
-      en: "CyberPulse bridges generative diffusion and multi-modal models into a visual node canvas, giving creative teams unconstrained spatial control over prompt chaining, asset generation, and version histories."
+      th: "เว็บแอปพลิเคชันที่พัฒนาด้วย React และ Tailwind CSS ช่วยอำนวยความสะดวกทั้งฝั่งลูกค้าและเจ้าของสนาม ลูกค้าสามารถตรวจเช็คตารางเวลาว่างของแต่ละคอร์ด เลือกช่วงเวลาที่ต้องการ และส่งคำขอจองได้ทันที ฝั่งผู้ดูแลมีหน้าแดชบอร์ด POS สำหรับคิดเงินค่าบริการ ค่าน้ำดื่ม ลูกแบดมินตัน เช่าไม้แบด พร้อมคำนวณเวลาเปิด-ปิดไฟคอร์ด และสรุปสถิติรายรับแต่ละวันได้อย่างแม่นยำผ่าน Firebase Firestore",
+      en: "Built with React and Tailwind CSS to streamline court allocation and counter sales. Customers view live visual court calendars, while managers utilize an intuitive POS checkout register for beverages and gear rentals. Firebase real-time listeners ensure live updates across all connected tablets and desktop counters."
     },
     challenges: [
       {
-        th: "การทำ Infinite Pan & Zoom แคนวาสที่มีวัตถุหลายร้อยชิ้นให้คงความลื่นไหลระดับ 60fps",
-        en: "Executing flawless infinite zoom and panning on a canvas hosting hundreds of dynamic media nodes."
+        th: "การป้องกันการจองคอร์ดซ้ำ (Double Booking) เมื่อมีผู้ใช้คลิกจองเวลาเดียวกันพร้อมกัน",
+        en: "Preventing concurrent booking collisions when multiple customers target the same court hour simultaneously."
       }
     ],
     solutions: [
       {
-        th: "ใช้ Spatial Indexing (R-Tree) เพื่อคำนวณ Viewport Culling เรนเดอร์เฉพาะโหนดที่อยู่ในสายตาของผู้ใช้",
-        en: "Implemented R-Tree spatial partitioning for viewport culling, rendering only elements visible in the camera frustum."
+        th: "ใช้ Firestore Transactions ร่วมกับ Atomic State Locks เพื่อรับประกันความถูกต้องของข้อมูลตามลำดับเวลา",
+        en: "Employed Firestore atomic transactions and optimistic locking to guarantee strict first-come-first-served slot acquisition."
       }
     ],
-    techStack: ["React 19", "Next.js", "Framer Motion", "Tailwind CSS", "Fabric.js", "Supabase"],
-    metrics: "Featured on Product Hunt #2 Product of the Day",
-    liveUrl: "https://cyberpulse-ai.vercel.app",
-    githubUrl: "https://github.com/kittiphat-dev/cyberpulse-canvas",
+    techStack: ["React", "JavaScript", "Firebase", "Firestore", "Tailwind CSS", "POS System"],
+    metrics: "100% Conflict-free Booking • Real-time DB Sync",
+    liveUrl: "https://github.com/PAnintoD",
+    githubUrl: "https://github.com/PAnintoD",
     featured: true,
     accentColor: "#3B82F6",
     gradient: "from-blue-500/20 via-sky-500/10 to-transparent",
-    year: "2024",
-    role: {
-      th: "Full-Stack Frontend & UX Specialist",
-      en: "Full-Stack Frontend & UX Specialist"
-    }
-  },
-  {
-    id: "chronos-luxury",
-    title: "Chronos Haute Horlogerie",
-    tagline: {
-      th: "เว็บอีคอมเมิร์ซนาฬิกาหรูสไตล์มินิมอล พร้อมเครื่องปรับแต่งนาฬิกา 3D แบบเรียลไทม์",
-      en: "Ultra-luxury timepiece boutique featuring real-time 3D material customization and smooth page transitions"
-    },
-    category: {
-      th: "Luxury E-Commerce / 3D Configurator",
-      en: "Luxury E-Commerce / 3D Configurator"
-    },
-    description: {
-      th: "ประสบการณ์เลือกซื้อนาฬิการะดับไฮเอนด์ด้วยการเรนเดอร์วัสดุทองคำ ไทเทเนียม และแซฟไฟร์เสมือนจริงแบบเรียลไทม์บนเบราว์เซอร์ พร้อมระบบสั่งตัดตามสั่ง",
-      en: "An evocative digital boutique enabling discerning collectors to inspect, rotate, and customize horological complications with photorealistic PBR lighting."
-    },
-    fullOverview: {
-      th: "Chronos นิยามนิยามใหม่ของร้านค้าดิจิทัลหรูหรา ด้วยการใช้ Micro-animations ที่ประณีต การโหลดโมเดล 3D แบบ Progressive และการจัดแสง Physically Based Rendering (PBR) ที่สะท้อนวัสดุขัดเงาอย่างสมจริงที่สุด",
-      en: "Chronos elevates luxury online retail with progressive 3D model streaming, physically based materials mimicking brushed metals and anti-reflective sapphire crystal, paired with frictionless checkout ergonomics."
-    },
-    challenges: [
-      {
-        th: "ไฟล์โมเดล 3D คุณภาพสูงมีขนาดใหญ่ ทำให้เวลาโหลดหน้าแรกช้า",
-        en: "High-resolution timepiece 3D models initially bloated download payloads."
-      }
-    ],
-    solutions: [
-      {
-        th: "บีบอัดโมเดลด้วย Draco Compression และ KTX2 Basis Universal Textures ลดขนาดลงถึง 78%",
-        en: "Applied Draco geometry compression and KTX2 Basis Universal texture encoding, slashing asset size by 78%."
-      }
-    ],
-    techStack: ["Next.js", "React Three Fiber", "Drei", "Tailwind CSS", "Stripe API", "Framer Motion"],
-    metrics: "+320% Online Inquiries • 1.2s First Contentful Paint",
-    liveUrl: "https://chronos-luxury.vercel.app",
-    githubUrl: "https://github.com/kittiphat-dev/chronos-luxury",
-    featured: true,
-    accentColor: "#EAB308",
-    gradient: "from-amber-500/20 via-yellow-500/10 to-transparent",
     year: "2023",
     role: {
-      th: "Creative Director & Lead Frontend",
-      en: "Creative Director & Lead Frontend"
+      th: "Full-Stack Web Developer",
+      en: "Full-Stack Web Developer"
     }
   },
   {
-    id: "kroma-design-system",
-    title: "Kroma Enterprise UI System",
+    id: "automation-ocr-tools",
+    title: "Automation & Utility Tools",
     tagline: {
-      th: "ดีไซน์ซิสเต็มและคลังคอมโพเนนต์ระดับองค์กร รองรับการเข้าถึง WCAG 2.1 AAA",
-      en: "Comprehensive enterprise design system & accessible component token engine"
+      th: "เครื่องมือ OCR สแกนหน้าจอแบบเรียลไทม์ และระบบจัดการข้อมูลอัตโนมัติด้วย n8n",
+      en: "Automated real-time screen capture OCR extractor and multi-platform data workflow engine powered by n8n"
     },
     category: {
-      th: "Design System / Open Source",
-      en: "Design System / Open Source"
+      th: "Automation & Utility Systems",
+      en: "Automation & Utility Systems"
     },
     description: {
-      th: "ระบบการออกแบบที่สร้างขึ้นเพื่อทีมพัฒนาขนาดใหญ่ มีส่วนประกอบ UI กว่า 70+ ชิ้น ควบคุมด้วย Design Tokens, รองรับ Keyboard Navigation 100% และมี Dark/Light Mode สมบูรณ์แบบ",
-      en: "A design system built for scale with 70+ accessible UI components, governed by design tokens, fully keyboard-navigable, and boasting 100% WCAG AAA contrast compliance."
+      th: "ชุดเครื่องมือช่วยลดภาระงานซ้ำซ้อน: โปรแกรม Utility สแกนข้อความจากพื้นที่บนหน้าจอคอมพิวเตอร์แบบเรียลไทม์ และไปป์ไลน์ n8n เชื่อมโยงข้อมูลระหว่าง Webhooks, ฐานข้อมูล และการแจ้งเตือนอัตโนมัติตลอด 24/7",
+      en: "A suite of productivity tools: floating real-time screen OCR reading text on-the-fly, combined with robust n8n orchestration pipelines linking webhooks, database stores, and automated notification bots."
     },
     fullOverview: {
-      th: "Kroma ได้รับการยอมรับและนำไปใช้งานในโปรดักต์ระดับองค์กร 12 แห่ง ช่วยลดเวลาการพัฒนา UI ลงถึง 40% มีเอกสาร Storybook โต้ตอบได้ และระบบ automated visual regression testing",
-      en: "Adopted across 12 enterprise products, Kroma reduced sprint UI velocity by 40%. It ships with interactive Storybook documentation, Figma synchronization tokens, and automated Playwright visual testing."
+      th: "โปรเจกต์นี้รวมสองเครื่องมือเด่น: ส่วนแรกคือ Desktop Utility ด้วย Python ที่สามารถดึงภาพจากพิกัดบนหน้าจอแบบเรียลไทม์ นำมาประมวลผล OCR แปลงเป็นข้อความและคัดลอกลงคลิปบอร์ดหรือบันทึกได้ทันที ส่วนที่สองคือระบบ Workflow Automation ด้วย n8n บนเซิร์ฟเวอร์ Linux (Ubuntu) ที่คอยดักฟัง Webhook, ดึงข้อมูลแปลงฟอร์แมต (ETL), บันทึกลงฐานข้อมูล และส่งแจ้งเตือนเข้าแอปพลิเคชันอย่างเป็นระเบียบ",
+      en: "A dual-utility automation framework: A lightweight Python screen-grabbing daemon that executes real-time OCR on designated desktop regions, paired with a self-hosted n8n engine running on Linux (Ubuntu). The n8n pipelines handle incoming webhooks, data transformation, and automated cross-service dispatches around the clock."
     },
     challenges: [
       {
-        th: "การผสานดีไซน์โทเคนระหว่าง Figma Tokens Studio และ Tailwind CSS ให้อัปเดตอัตโนมัติ",
-        en: "Automating bi-directional token synchronization between Figma and Tailwind configuration."
+        th: "การตรวจจับข้อความจากหน้าจอที่มีความละเอียดและขนาดฟอนต์แตกต่างกันให้แม่นยำและไม่กินแรม",
+        en: "Extracting text reliably across varied display scaling factors while keeping memory consumption minimal."
       }
     ],
     solutions: [
       {
-        th: "สร้าง GitHub Action CI Pipeline ดึงข้อมูลโทเคน JSON แล้ว Generate เป็น CSS Variables และ Tailwind Plugin อัตโนมัติ",
-        en: "Engineered a GitHub Actions pipeline parsing JSON design tokens into CSS variables and typed Tailwind utilities on push."
+        th: "ใช้ Dynamic Binarization และจัดการหน่วยความจำของ OCR Model ให้รันเฉพาะเมื่อมีการกดคีย์ลัด",
+        en: "Utilized dynamic image thresholding and kept model weights cached with hotkey-driven execution."
       }
     ],
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Storybook", "Radix UI", "Jest"],
-    metrics: "2.5K+ GitHub Stars • Used in 12 Enterprise Products",
-    liveUrl: "https://kroma-ui.vercel.app",
-    githubUrl: "https://github.com/kittiphat-dev/kroma-design-system",
-    featured: false,
+    techStack: ["Python", "EasyOCR", "n8n", "Linux (Ubuntu)", "Webhooks", "Automation Workflows"],
+    metrics: "24/7 Unattended Uptime • 80% Time Saved",
+    liveUrl: "https://github.com/PAnintoD",
+    githubUrl: "https://github.com/PAnintoD",
+    featured: true,
     accentColor: "#10B981",
     gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
     year: "2023",
     role: {
-      th: "Design System Architect",
-      en: "Design System Architect"
-    }
-  },
-  {
-    id: "siamcraft-ar",
-    title: "SiamCraft WebXR Cultural Heritage",
-    tagline: {
-      th: "ประสบการณ์ Augmented Reality บนเว็บเพื่ออนุรักษ์มรดกสถาปัตยกรรมไทย",
-      en: "WebXR augmented reality experience preserving traditional Thai architectural heritage"
-    },
-    category: {
-      th: "WebXR / Cultural Tech",
-      en: "WebXR / Cultural Tech"
-    },
-    description: {
-      th: "การท่องเที่ยวเชิงวัฒนธรรมรูปแบบใหม่บนเบราว์เซอร์ ผู้ใช้สามารถวางโมเดลพระอุโบสถและลายไทยโบราณลงในพื้นที่จริงผ่านกล้องสมาร์ตโฟนโดยไม่ต้องลงแอปพลิเคชัน",
-      en: "App-free augmented reality on mobile web, allowing users to project and explore traditional Thai architectural temples and intricate patterns in their physical living space."
-    },
-    fullOverview: {
-      th: "โครงการ SiamCraft ผสานเทคโนโลยี WebXR เข้ากับคุณค่าทางประวัติศาสตร์ โดยร่วมมือกับนักโบราณคดีในการสแกน 3D Photogrammetry และปรับแต่งให้รันบนเว็บได้รวดเร็วทันใจ พร้อมเสียงบรรยายสองภาษา",
-      en: "SiamCraft synthesizes WebXR with historical preservation. Collaborating with cultural archivists, photogrammetric scans were optimized for instant web streaming with bilingual spatial narration."
-    },
-    challenges: [
-      {
-        th: "การรองรับเทคโนโลยี WebXR Device API ข้ามเบราว์เซอร์ทั้ง iOS QuickLook และ Android SceneViewer",
-        en: "Achieving seamless cross-platform WebXR compatibility spanning iOS USDZ QuickLook and Android SceneViewer."
-      }
-    ],
-    solutions: [
-      {
-        th: "สร้าง Fallback Polyfill อัตโนมัติ ตรวจจับเบราว์เซอร์และเสิร์ฟไฟล์ GLTF หรือ USDZ พร้อมสลับเป็น 3D Orbit Controls หากไม่มีเซ็นเซอร์ AR",
-        en: "Devised an adaptive loader polyfill dynamically dispatching GLTF/USDZ or falling back to high-fidelity 3D orbit viewer."
-      }
-    ],
-    techStack: ["WebXR API", "Three.js", "Next.js", "TypeScript", "Tailwind CSS"],
-    metrics: "120K+ AR Views • National Creative Economy Award",
-    liveUrl: "https://siamcraft-ar.vercel.app",
-    githubUrl: "https://github.com/kittiphat-dev/siamcraft-ar",
-    featured: false,
-    accentColor: "#F43F5E",
-    gradient: "from-rose-500/20 via-pink-500/10 to-transparent",
-    year: "2023",
-    role: {
-      th: "Creative Technologist & 3D Artist",
-      en: "Creative Technologist & 3D Artist"
+      th: "Automation & Backend Engineer",
+      en: "Automation & Backend Engineer"
     }
   }
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: "frontend",
+    id: "programming-languages",
     title: {
-      th: "Frontend Engineering",
-      en: "Frontend Engineering"
+      th: "ภาษาโปรแกรม (Programming Languages)",
+      en: "Programming Languages"
     },
     description: {
-      th: "สถาปัตยกรรมฟรอนต์เอนด์ยุคใหม่ เน้น Performance และโครงสร้างโค้ดที่ยั่งยืน",
-      en: "Modern frontend architecture focused on extreme performance, resilience, and clean code."
+      th: "ภาษาโปรแกรมหลักที่ใช้ในการพัฒนาซอฟต์แวร์ สคริปต์อัตโนมัติ และระบบฝังตัว",
+      en: "Core programming languages utilized for software development, automation scripts, and embedded logic."
     },
     skills: [
       {
-        name: "Next.js (App Router / RSC)",
+        name: "Python",
         level: "Expert",
-        description: { th: "Server Components, Server Actions, Caching, Parallel Routes", en: "Server Components, Server Actions, Caching, Parallel Routes" },
-        iconName: "Globe"
-      },
-      {
-        name: "React 19 & TypeScript",
-        level: "Expert",
-        description: { th: "Strict Type Safety, Hooks Architecture, Concurrent Mode", en: "Strict Type Safety, Hooks Architecture, Concurrent Mode" },
+        description: { th: "AI Vision, OCR, Automation Scripts, Data Pipelines, PyTorch", en: "AI Vision, OCR, Automation Scripts, Data Pipelines, PyTorch" },
         iconName: "Code2"
       },
       {
-        name: "Tailwind CSS (v3 / v4)",
-        level: "Expert",
-        description: { th: "Modern Utility-First, Custom Design Tokens, Fluid Typography", en: "Modern Utility-First, Custom Design Tokens, Fluid Typography" },
-        iconName: "Palette"
+        name: "C# (.NET)",
+        level: "Advanced",
+        description: { th: "WinForms Desktop GUI, Serial Communication, Multi-threading", en: "WinForms Desktop GUI, Serial Communication, Multi-threading" },
+        iconName: "Cpu"
       },
       {
-        name: "State Management",
+        name: "JavaScript",
         level: "Advanced",
-        description: { th: "Zustand, React Query (TanStack), Context API", en: "Zustand, React Query (TanStack), Context API" },
-        iconName: "Cpu"
+        description: { th: "Modern ES6+, Web Application Development, Full-Stack Scripting", en: "Modern ES6+, Web Application Development, Full-Stack Scripting" },
+        iconName: "Globe"
+      },
+      {
+        name: "Lua",
+        level: "Proficient",
+        description: { th: "Embedded Game Scripting, Lightweight Logic, Rapid Prototyping", en: "Embedded Game Scripting, Lightweight Logic, Rapid Prototyping" },
+        iconName: "Layers"
       }
     ]
   },
   {
-    id: "creative-3d",
+    id: "ai-computer-vision",
     title: {
-      th: "Creative & 3D Web",
-      en: "Creative & 3D Web"
+      th: "AI & Computer Vision",
+      en: "AI & Computer Vision"
     },
     description: {
-      th: "การผสมผสานกราฟิก 3 มิติ และ Motion Design เพื่อสร้างความประทับใจระดับรางวัล",
-      en: "Harmonizing 3D graphics and butter-smooth motion for award-caliber experiences."
+      th: "การประมวลผลภาพ การตรวจจับวัตถุ และการรู้จำตัวอักษรด้วยปัญญาประดิษฐ์",
+      en: "Deep learning object detection, optical character recognition, and image filtering pipelines."
     },
     skills: [
       {
-        name: "Three.js & React Three Fiber",
+        name: "YOLOv8 (Object Detection)",
         level: "Advanced",
-        description: { th: "WebGL Shaders, PBR Materials, Post-processing, Math Animations", en: "WebGL Shaders, PBR Materials, Post-processing, Math Animations" },
-        iconName: "Layers"
-      },
-      {
-        name: "Framer Motion & GSAP",
-        level: "Expert",
-        description: { th: "ScrollTrigger, Micro-interactions, Physics Springs, Staggers", en: "ScrollTrigger, Micro-interactions, Physics Springs, Staggers" },
-        iconName: "Sparkles"
-      },
-      {
-        name: "Custom GLSL Shaders",
-        level: "Proficient",
-        description: { th: "Procedural Noise, Vertex Displacements, Liquid Ripple Effects", en: "Procedural Noise, Vertex Displacements, Liquid Ripple Effects" },
+        description: { th: "Real-time Vehicle & Object Detection, Bounding Box Extraction, Model Tuning", en: "Real-time Vehicle & Object Detection, Bounding Box Extraction, Model Tuning" },
         iconName: "Activity"
       },
       {
-        name: "Audio Visualization",
+        name: "EasyOCR & Tesseract",
         level: "Advanced",
-        description: { th: "Web Audio API, Real-time Frequency FFT Analysis, Spatial Sound", en: "Web Audio API, Real-time Frequency FFT Analysis, Spatial Sound" },
-        iconName: "Volume2"
-      }
-    ]
-  },
-  {
-    id: "design-ux",
-    title: {
-      th: "UI/UX & Design Systems",
-      en: "UI/UX & Design Systems"
-    },
-    description: {
-      th: "การออกแบบประสบการณ์ผู้ใช้ที่เรียบหรู ใช้งานง่าย และได้มาตรฐานสากล",
-      en: "Curating sleek, intuitive ergonomics grounded in human-computer interaction standards."
-    },
-    skills: [
-      {
-        name: "Figma & Design Tokens",
-        level: "Expert",
-        description: { th: "Auto Layout, Component Variants, Multi-brand Token Engines", en: "Auto Layout, Component Variants, Multi-brand Token Engines" },
-        iconName: "Figma"
-      },
-      {
-        name: "Accessibility (WCAG 2.1)",
-        level: "Expert",
-        description: { th: "Keyboard Navigation, Screen Reader Semantic ARIA, High Contrast", en: "Keyboard Navigation, Screen Reader Semantic ARIA, High Contrast" },
+        description: { th: "Text Extraction, Thai/English Plate Reading, Multi-scale Scanning", en: "Text Extraction, Thai/English Plate Reading, Multi-scale Scanning" },
         iconName: "Eye"
       },
       {
-        name: "Rapid 3D Prototyping",
+        name: "OpenCV & Image Processing",
         level: "Advanced",
-        description: { th: "Spline 3D, Blender Modeling, Interactive UI Simulations", en: "Spline 3D, Blender Modeling, Interactive UI Simulations" },
-        iconName: "Box"
+        description: { th: "Grayscale, Thresholding, Contours, Morphological Filters, Perspective Transform", en: "Grayscale, Thresholding, Contours, Morphological Filters, Perspective Transform" },
+        iconName: "Sparkles"
       },
       {
-        name: "UX Research & Testing",
-        level: "Advanced",
-        description: { th: "User Journey Mapping, Heatmap Analysis, Usability Testing", en: "User Journey Mapping, Heatmap Analysis, Usability Testing" },
-        iconName: "Users"
+        name: "PyTorch & ML Tooling",
+        level: "Proficient",
+        description: { th: "Inference Optimization, NumPy Operations, Model Export & Deployment", en: "Inference Optimization, NumPy Operations, Model Export & Deployment" },
+        iconName: "Box"
       }
     ]
   },
   {
-    id: "backend-tools",
+    id: "software-hardware",
     title: {
-      th: "Backend, Cloud & Tools",
-      en: "Backend, Cloud & Tools"
+      th: "ซอฟต์แวร์และฮาร์ดแวร์ (Software & Hardware)",
+      en: "Software & Hardware"
     },
     description: {
-      th: "เครื่องมือและโครงสร้างพื้นฐานเพื่อสนับสนุนการทำงานแบบ Full-stack อย่างมั่นใจ",
-      en: "DevOps, APIs, and cloud infrastructure powering resilient full-stack workflows."
+      th: "การพัฒนาเว็บแอปพลิเคชัน การควบคุมไมโครคอนโทรลเลอร์ และการเชื่อมต่ออุปกรณ์ IoT",
+      en: "Web development, desktop interfaces, microcontroller programming, and IoT hardware syncing."
     },
     skills: [
       {
-        name: "Node.js & Server Actions",
+        name: "React & Tailwind CSS",
         level: "Advanced",
-        description: { th: "RESTful Endpoints, Webhook Handlers, Edge Functions", en: "RESTful Endpoints, Webhook Handlers, Edge Functions" },
-        iconName: "Server"
+        description: { th: "Interactive Web Interfaces, Component Architecture, Responsive Design", en: "Interactive Web Interfaces, Component Architecture, Responsive Design" },
+        iconName: "Globe"
       },
       {
-        name: "Databases & Auth",
+        name: "C# WinForms & Desktop",
         level: "Advanced",
-        description: { th: "PostgreSQL, Supabase, Prisma ORM, NextAuth / Clerk", en: "PostgreSQL, Supabase, Prisma ORM, NextAuth / Clerk" },
+        description: { th: "Operator Dashboards, Event-Driven Controls, Native Windows Interfacing", en: "Operator Dashboards, Event-Driven Controls, Native Windows Interfacing" },
+        iconName: "Cpu"
+      },
+      {
+        name: "Arduino & Microcontrollers",
+        level: "Advanced",
+        description: { th: "Serial UART Communication, Relay Controls, Sensor Telemetry & Actuation", en: "Serial UART Communication, Relay Controls, Sensor Telemetry & Actuation" },
+        iconName: "Layers"
+      },
+      {
+        name: "Firebase (Firestore & Realtime)",
+        level: "Advanced",
+        description: { th: "Realtime Database, Authentication, Live State Synchronization", en: "Realtime Database, Authentication, Live State Synchronization" },
         iconName: "Database"
-      },
+      }
+    ]
+  },
+  {
+    id: "devops-automation",
+    title: {
+      th: "ระบบอัตโนมัติและระบบปฏิบัติการ (Automation & DevOps)",
+      en: "Automation & DevOps"
+    },
+    description: {
+      th: "การจัดการระบบอัตโนมัติ การดูแลเซิร์ฟเวอร์ และกระบวนการ CI/CD",
+      en: "Workflow automation engines, Linux server environments, and reliable deployment processes."
+    },
+    skills: [
       {
-        name: "Vercel & CI/CD",
+        name: "n8n Workflow Automation",
         level: "Expert",
-        description: { th: "Automated Deployments, Edge Middleware, Analytics & Speed Insights", en: "Automated Deployments, Edge Middleware, Analytics & Speed Insights" },
+        description: { th: "Self-hosted Workflows, Webhook Routing, Automated Data Sync, Notifications", en: "Self-hosted Workflows, Webhook Routing, Automated Data Sync, Notifications" },
         iconName: "CloudLightning"
       },
       {
-        name: "Testing & Quality",
+        name: "Linux (Ubuntu Server)",
         level: "Advanced",
-        description: { th: "Playwright, Vitest, Lighthouse CI (95+ score target)", en: "Playwright, Vitest, Lighthouse CI (95+ score target)" },
+        description: { th: "Terminal Administration, Daemon Services, Cron Jobs, SSH & Environment Setup", en: "Terminal Administration, Daemon Services, Cron Jobs, SSH & Environment Setup" },
+        iconName: "Server"
+      },
+      {
+        name: "Real-time Screen OCR Utility",
+        level: "Advanced",
+        description: { th: "Custom Desktop Screen Bounding, Hotkey Binding, Automated Data Capture", en: "Custom Desktop Screen Bounding, Hotkey Binding, Automated Data Capture" },
+        iconName: "Eye"
+      },
+      {
+        name: "Git & GitHub Version Control",
+        level: "Advanced",
+        description: { th: "Branching, Collaboration, Repository Management, Deployment Pipelines", en: "Branching, Collaboration, Repository Management, Deployment Pipelines" },
         iconName: "CheckCircle2"
       }
     ]
@@ -586,182 +492,158 @@ export const skillCategories: SkillCategory[] = [
 export const experiences: ExperienceItem[] = [
   {
     id: "exp-1",
-    period: "2024 — Present",
+    period: "2023 — ปัจจุบัน",
     role: {
-      th: "Lead Creative Technologist & Frontend Architect",
-      en: "Lead Creative Technologist & Frontend Architect"
+      th: "นักพัฒนาซอฟต์แวร์, ระบบอัตโนมัติ และ AI Vision",
+      en: "Software, Automation & AI Vision Developer"
     },
-    company: "Studio Horizon Digital (Bangkok & Remote)",
+    company: "Independent Projects & Technology Solutions",
     location: {
-      th: "กรุงเทพฯ / Remote",
-      en: "Bangkok / Remote"
+      th: "ประเทศไทย",
+      en: "Thailand"
     },
     description: {
-      th: "ดูแลทิศทางด้าน Creative Frontend Architecture และการพัฒนาเว็บแอปพลิเคชันเชิงโต้ตอบระดับสากล นำทีมพัฒนาสร้างผลงาน 3D WebGL และ Design Systems ให้ลูกค้าระดับ Fortune 500",
-      en: "Spearheading creative frontend architecture and high-touch interactive web platforms for international clients. Mentoring engineers in 3D WebGL, modern Next.js paradigms, and scalable motion libraries."
+      th: "วิจัย พัฒนา และส่งมอบโปรเจกต์ซอฟต์แวร์จริงที่ผสานระหว่าง AI Computer Vision, การควบคุมฮาร์ดแวร์ IoT, และการสร้างระบบ Workflow อัตโนมัติ",
+      en: "Architecting and deploying production projects synthesizing AI vision models, hardware microcontroller IoT controls, and unattended automation workflows."
     },
     achievements: [
       {
-        th: "เพิ่มความเร็วการโหลดหน้าเว็บไซต์ในโปรเจกต์หลักลง 42% ด้วย Next.js App Router และ Edge Caching",
-        en: "Decreased average time-to-interactive by 42% using Next.js App Router streaming and edge caching."
+        th: "พัฒนาระบบตรวจจับป้ายทะเบียนด้วย AI (YOLOv8 + EasyOCR) ประมวลผลภาพจากกล้องแบบเรียลไทม์",
+        en: "Built real-time AI license plate recognition pipeline combining YOLOv8 with EasyOCR."
       },
       {
-        th: "คว้ารางวัล Special Mention จากเวทีออกแบบระดับสากล 2 รายการ",
-        en: "Earned 2 international design accolades for innovative WebGL user experiences."
+        th: "สร้างระบบควบคุมประตูอัจฉริยะ Smart Gate สื่อสารผ่าน Serial Port กับ Arduino ควบคุมรีเลย์และเซนเซอร์",
+        en: "Engineered smart gate hardware controller linking C# WinForms to Arduino over serial UART."
+      },
+      {
+        th: "วางโครงสร้างระบบ Automation ด้วย n8n และ OCR เครื่องมือสแกนหน้าจอช่วยลดเวลาทำงานซ้ำซ้อน",
+        en: "Orchestrated 24/7 n8n automated pipelines and real-time screen OCR utilities."
       }
     ],
-    technologies: ["Next.js", "React 19", "Three.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    technologies: ["Python", "YOLOv8", "EasyOCR", "C#", "WinForms", "Arduino", "n8n", "Linux (Ubuntu)"],
     type: "work"
   },
   {
     id: "exp-2",
     period: "2022 — 2024",
     role: {
-      th: "Senior Interactive Frontend & Motion Developer",
-      en: "Senior Interactive Frontend & Motion Developer"
+      th: "ผู้พัฒนาระบบ Web Application & ระบบขายหน้าร้าน (POS)",
+      en: "Web Application & POS Systems Developer"
     },
-    company: "NextWave Interactive Labs",
+    company: "Commercial & Sports Management Projects",
     location: {
-      th: "กรุงเทพมหานคร",
-      en: "Bangkok, Thailand"
+      th: "ประเทศไทย",
+      en: "Thailand"
     },
     description: {
-      th: "พัฒนาเว็บแคมเปญแบบ Immersive เว็บไซต์แบรนด์หรู และฟินเทคแดชบอร์ดที่เน้น Animation ระดับพรีเมียม ร่วมมืออย่างใกล้ชิดกับ Art Directors และ 3D Artists",
-      en: "Engineered immersive brand campaigns, luxury e-commerce experiences, and high-frequency FinTech dashboards with bespoke motion design. Collaborated side-by-side with Art Directors."
+      th: "พัฒนาเว็บแอปพลิเคชันระบบจองสนามและจุดขายสินค้าหน้าร้าน (POS) เชื่อมต่อฐานข้อมูลเรียลไทม์",
+      en: "Developed real-time sports court reservation systems and point-of-sale retail web software."
     },
     achievements: [
       {
-        th: "สร้าง Custom Animation Framework ที่ลดขนาด Bundle สำหรับ WebGL ลง 35%",
-        en: "Architected a reusable canvas transition framework reducing WebGL bundle weight by 35%."
+        th: "พัฒนาเว็บไซต์จองคอร์ดแบดมินตันและระบบ POS ด้วย React และ Firebase รองรับการจองแบบไม่มีข้อผิดพลาด",
+        en: "Delivered conflict-free badminton court booking and POS terminal powered by React & Firebase."
       },
       {
-        th: "ร่วมพัฒนาแอปพลิเคชันเทรดดิ้งที่มีผู้ใช้งานจริงมากกว่า 50,000 คนต่อวัน",
-        en: "Co-built a mission-critical trading terminal serving over 50,000 active daily traders."
+        th: "ออกแบบ UI/UX ให้ใช้งานง่าย สะดวกรวดเร็วทั้งบนแท็บเล็ตและคอมพิวเตอร์หน้าร้าน",
+        en: "Crafted intuitive, responsive ergonomics tailored for fast counter transactions on touchscreens."
       }
     ],
-    technologies: ["React", "WebGL", "GSAP", "Tailwind CSS", "Zustand", "WebSocket"],
+    technologies: ["React", "JavaScript", "Firebase", "Firestore", "Tailwind CSS", "POS System"],
     type: "work"
   },
   {
     id: "exp-3",
-    period: "2020 — 2022",
+    period: "การศึกษา & การพัฒนาทักษะเฉพาะทาง",
     role: {
-      th: "UI/UX Engineer & Frontend Developer",
-      en: "UI/UX Engineer & Frontend Developer"
+      th: "ด้านวิศวกรรมซอฟต์แวร์, ระบบ IoT และเทคโนโลยี AI",
+      en: "Software Engineering, IoT & Applied AI Specialization"
     },
-    company: "Quantum Media Group",
+    company: "Continuous Technical Mastery & Practical Building",
     location: {
-      th: "กรุงเทพมหานคร",
-      en: "Bangkok, Thailand"
+      th: "ประเทศไทย",
+      en: "Thailand"
     },
     description: {
-      th: "ออกแบบและสร้าง Enterprise Design System สำหรับใช้งานใน 8 ผลิตภัณฑ์ขององค์กร ควบคุมคุณภาพ UX และการเข้าถึงตามเกณฑ์ WCAG 2.1 AAA",
-      en: "Designed and engineered the unified enterprise UI component library powering 8 corporate digital products, standardizing design tokens and accessibility compliance."
+      th: "ศึกษาและพัฒนาทักษะเชิงลึกด้านการประมวลผลภาพ (Computer Vision), การเขียนโปรแกรมเชื่อมต่อฮาร์ดแวร์ (Hardware-Software Co-design) และระบบอัตโนมัติ",
+      en: "Dedicated focus on practical computer vision algorithms, low-level serial communication protocols, and cloud/edge automation."
     },
     achievements: [
       {
-        th: "ส่งมอบ Design System ที่มีคอมโพเนนต์กว่า 60+ รายการ พร้อมเอกสาร Storybook สมบูรณ์แบบ",
-        en: "Shipped 60+ component design system with comprehensive Storybook interactive playground."
+        th: "เชี่ยวชาญภาษา Python, C#, JavaScript, Lua สำหรับงานหลากหลายมิติ",
+        en: "Proficient across Python, C#, JavaScript, and Lua for versatile domain engineering."
       },
       {
-        th: "ลดระยะเวลาการขึ้นฟีเจอร์ใหม่ของทีมวิศวกรลง 30%",
-        en: "Reduced cross-team feature implementation cycle times by 30%."
+        th: "สร้างเครื่องมือ Utility และระบบอัตโนมัติที่ใช้งานได้จริงในชีวิตประจำวัน",
+        en: "Built pragmatic utilities and automation pipelines delivering everyday operational value."
       }
     ],
-    technologies: ["React", "TypeScript", "Storybook", "Styled Components", "Jest"],
-    type: "work"
-  },
-  {
-    id: "exp-4",
-    period: "2016 — 2020",
-    role: {
-      th: "ปริญญาตรี วิศวกรรมคอมพิวเตอร์ (เกียรตินิยม)",
-      en: "B.Eng. Computer Engineering (First Class Honours)"
-    },
-    company: "Chulalongkorn University",
-    location: {
-      th: "กรุงเทพมหานคร",
-      en: "Bangkok, Thailand"
-    },
-    description: {
-      th: "ศึกษาด้าน Computer Graphics, Human-Computer Interaction (HCI), Algorithms และ Software Engineering ได้รับรางวัลโครงงานยอดเยี่ยมสาขา Interactive Systems",
-      en: "Specialized in Computer Graphics, Human-Computer Interaction (HCI), Distributed Systems, and Software Engineering. Awarded Best Senior Capstone for Interactive Real-Time Systems."
-    },
-    achievements: [
-      {
-        th: "เกรดเฉลี่ยสะสม 3.85 (เกียรตินิยมอันดับหนึ่ง)",
-        en: "GPA 3.85 (First Class Honours)"
-      },
-      {
-        th: "ชนะเลิศการแข่งขัน Hackathon ด้าน Creative Tech ระดับประเทศ",
-        en: "1st Place National Creative Technology Hackathon Winner"
-      }
-    ],
-    technologies: ["Computer Graphics", "HCI", "OpenGL", "C++", "JavaScript", "Algorithms"],
+    technologies: ["Python", "C#", "JavaScript", "Lua", "Arduino", "OpenCV", "n8n", "Ubuntu"],
     type: "education"
   }
 ];
 
 export const uiContent = {
   loading: {
-    systemInit: { th: "กำลังเริ่มต้นระบบ...", en: "INITIALIZING QUANTUM RUNTIME..." },
-    ready: { th: "ระบบพร้อมทำงาน 100%", en: "CORE MATRIX LOADED 100%" }
+    systemInit: { th: "กำลังโหลดระบบ ธนภูมิ สีแดง...", en: "INITIALIZING THANAPOOM SYSTEM..." },
+    ready: { th: "ระบบพร้อมทำงาน 100%", en: "CORE MATRIX READY 100%" }
   },
   hero: {
-    badge: { th: "พร้อมรับงานโปรเจกต์ใหม่ • 2025/2026", en: "AVAILABLE FOR SELECT PROJECTS • 2025/2026" },
-    greeting: { th: "สวัสดีครับ, ผมชื่อ", en: "HELLO, WORLD. I AM" },
-    viewWork: { th: "ดูผลงานทั้งหมด", en: "View Selected Work" },
-    contactMe: { th: "คุยโปรเจกต์กัน", en: "Let's Connect" },
+    badge: { th: "พร้อมรับงานพัฒนาโปรเจกต์ • IoT, AI & Software", en: "AVAILABLE FOR SELECT PROJECTS • IoT, AI & SOFTWARE" },
+    greeting: { th: "สวัสดีครับ, ผมคือ", en: "HELLO, WORLD. I AM" },
+    viewWork: { th: "ดูผลงานเด่น", en: "View Selected Work" },
+    viewGithub: { th: "ดู GitHub ของฉัน", en: "Visit My GitHub" },
+    contactMe: { th: "ติดต่อพูดคุย", en: "Let's Connect" },
     scrollDown: { th: "เลื่อนลงเพื่อสำรวจ", en: "SCROLL TO EXPLORE" }
   },
   about: {
-    sectionTag: { th: "01 // เกี่ยวกับฉัน", en: "01 // ABOUT ME" },
-    heading: { th: "หลอมรวมสุนทรียภาพ ดีไซน์ และเทคโนโลยี", en: "Bridging Creative Aesthetics & Production Code" },
-    curiousMind: { th: "ความหลงใหลในรายละเอียด", en: "The Pursuit of Micro-Finesse" },
-    skillsSummary: { th: "สถิติที่สำคัญ", en: "Key Milestones" }
+    sectionTag: { th: "01 // แนะนำตัว", en: "01 // ABOUT ME" },
+    heading: { th: "เน้นการลงมือสร้างจริง เชื่อมต่อซอฟต์แวร์ ฮาร์ดแวร์ และ AI", en: "Hands-on Builder Bridging Software, Hardware & AI" },
+    curiousMind: { th: "ปรัชญาการทำงาน", en: "Engineering Mindset" },
+    skillsSummary: { th: "จุดเด่นสำคัญ", en: "Core Strengths" }
   },
   skills: {
-    sectionTag: { th: "02 // ความเชี่ยวชาญ", en: "02 // CAPABILITIES" },
-    heading: { th: "ทักษะและเทคโนโลยีที่เชี่ยวชาญ", en: "Technical Arsenal & Creative Toolkit" },
-    subheading: { th: "เครื่องมือและเฟรมเวิร์กที่ผมใช้สร้างสรรค์ผลงานระดับโปรดักชัน", en: "Battle-tested tools and frameworks I wield to architect high-performance experiences." }
+    sectionTag: { th: "02 // ทักษะความเชี่ยวชาญ", en: "02 // CAPABILITIES" },
+    heading: { th: "ทักษะและเทคโนโลยีที่ใช้งานจริง", en: "Technical Arsenal & Engineering Skills" },
+    subheading: { th: "ครอบคลุมทั้งภาษาโปรแกรม, AI/Vision, ซอฟต์แวร์และฮาร์ดแวร์ IoT ตลอดจนระบบอัตโนมัติ", en: "Battle-tested tools across programming languages, AI/Vision, hardware IoT, and automation workflows." }
   },
   projects: {
-    sectionTag: { th: "03 // ผลงานเด่น", en: "03 // FEATURED WORK" },
-    heading: { th: "ผลงานที่คัดสรรมาเป็นพิเศษ", en: "Selected Showcase Projects" },
-    subheading: { th: "คลิกที่การ์ดเพื่อดูรายละเอียด สถาปัตยกรรมโค้ด และผลลัพธ์", en: "Click any card to inspect technical breakdown, challenges, and live demos." },
+    sectionTag: { th: "03 // ผลงานเด่น", en: "03 // FEATURED PROJECTS" },
+    heading: { th: "ผลงานที่คัดสรรมาเป็นพิเศษ", en: "Featured Showcase Projects" },
+    subheading: { th: "คลิกที่การ์ดเพื่อดูรายละเอียด สถาปัตยกรรมโค้ด ความท้าทาย และลิงก์ Source Code", en: "Click any project card to inspect technical architecture, challenges, and code repositories." },
     allProjects: { th: "ทั้งหมด", en: "All" },
-    viewLive: { th: "เข้าชมเว็บไซต์จริง", en: "Live Demo" },
+    viewLive: { th: "ดูโค้ดบน GitHub", en: "View on GitHub" },
     viewGithub: { th: "ดูโค้ดบน GitHub", en: "Source Code" },
-    caseStudy: { th: "อ่าน Case Study", en: "Inspect Project" },
-    back: { th: "ปิดหน้าต่าง", en: "Close Preview" }
+    caseStudy: { th: "อ่านรายละเอียดเชิงลึก", en: "Inspect Project" },
+    back: { th: "ปิดหน้าต่าง", en: "Close Details" }
   },
   experience: {
-    sectionTag: { th: "04 // เส้นทางอาชีพ", en: "04 // JOURNEY" },
-    heading: { th: "ประสบการณ์และเส้นทางการเติบโต", en: "Career Odyssey & Education" },
-    subheading: { th: "ลำดับการทำงาน การศึกษา และรางวัลที่ได้รับ", en: "Chronological milestones shaping my technical and design worldview." }
+    sectionTag: { th: "04 // เส้นทางประสบการณ์", en: "04 // JOURNEY" },
+    heading: { th: "ประสบการณ์และผลงานที่ผ่านมา", en: "Experience Odyssey & Milestones" },
+    subheading: { th: "ลำดับการทำงานจริงในการพัฒนาซอฟต์แวร์ ระบบ IoT และเทคโนโลยี AI", en: "Chronological milestones demonstrating hands-on technical execution." }
   },
   contact: {
     sectionTag: { th: "05 // ช่องทางติดต่อ", en: "05 // INITIATE CONTACT" },
-    heading: { th: "มาร่วมสร้างสรรค์สิ่งที่น่าทึ่งด้วยกัน", en: "Let's Engineer Something Exceptional" },
-    subheading: { th: "มีโปรเจกต์ใหม่ ต้องการที่ปรึกษา หรืออยากชวนร่วมทีม? ทักทายมาได้เลยครับ", en: "Have a visionary project in mind or looking for a creative developer? My inbox is always open." },
+    heading: { th: "มาร่วมสร้างสรรค์โปรเจกต์ด้วยกัน", en: "Let's Build Something Exceptional" },
+    subheading: { th: "มีโปรเจกต์ใหม่ ต้องการพัฒนาระบบ AI Vision, IoT, เว็บแอป หรือระบบอัตโนมัติ ทักมาได้เลยครับ", en: "Have a software, AI Vision, IoT, or automation project in mind? My inbox is always open." },
     formName: { th: "ชื่อของคุณ", en: "Your Name" },
-    formNamePlaceholder: { th: "สมชาย ใจดี", en: "Alex Thorne" },
+    formNamePlaceholder: { th: "สมชาย ใจดี", en: "Your Name or Company" },
     formEmail: { th: "อีเมลของคุณ", en: "Your Email Address" },
-    formEmailPlaceholder: { th: "alex@example.com", en: "alex@company.com" },
+    formEmailPlaceholder: { th: "contact@example.com", en: "contact@company.com" },
     formMessage: { th: "ข้อความหรือรายละเอียดโปรเจกต์", en: "Project Details or Message" },
-    formMessagePlaceholder: { th: "สวัสดีครับ อยากปรึกษาเรื่องโปรเจกต์ Next.js & 3D Web...", en: "Hello! We'd love to collaborate on an interactive WebGL redesign..." },
-    submitButton: { th: "ส่งข้อความทันที", en: "Send Message" },
-    submitting: { th: "กำลังส่งสัญญาณ...", en: "Transmitting..." },
+    formMessagePlaceholder: { th: "สวัสดีครับ อยากปรึกษาเรื่องโปรเจกต์ตรวจจับป้ายทะเบียนด้วย AI / ระบบ IoT...", en: "Hello Thanapoom! We'd love to discuss an AI Vision or IoT project..." },
+    submitButton: { th: "ส่งข้อความหา ธนภูมิ", en: "Send Message to Thanapoom" },
+    submitting: { th: "กำลังส่งข้อความ...", en: "Transmitting..." },
     successTitle: { th: "ส่งข้อความสำเร็จแล้ว!", en: "Transmission Received!" },
-    successDesc: { th: "ขอบคุณสำหรับการติดต่อ ผมจะรีบตอบกลับคุณภายใน 24 ชั่วโมงครับ", en: "Thank you for reaching out. I'll get back to you within 24 hours." },
+    successDesc: { th: "ขอบคุณสำหรับการติดต่อ ธนภูมิ สีแดง จะรีบตอบกลับคุณโดยเร็วที่สุดครับ", en: "Thank you for reaching out. Thanapoom Sidaeng will reply promptly." },
     sendAnother: { th: "ส่งข้อความอื่น", en: "Send another message" },
     copyEmail: { th: "คัดลอกอีเมล", en: "Copy Email" },
     copied: { th: "คัดลอกแล้ว!", en: "Copied to Clipboard!" }
   },
   footer: {
-    craftedWith: { th: "ออกแบบและพัฒนาด้วยความหลงใหล โดย กิตติภัทร วงศ์สุวรรณ", en: "Engineered with passion by Kittiphat Wongsuwan" },
+    craftedWith: { th: "ออกแบบและพัฒนาด้วยความใส่ใจ โดย ธนภูมิ สีแดง (Thanapoom Sidaeng)", en: "Engineered with precision by Thanapoom Sidaeng (PAnintoD)" },
     builtUsing: { th: "ขับเคลื่อนด้วย Next.js 16, Three.js & Tailwind CSS", en: "Powered by Next.js 16, Three.js & Tailwind CSS" },
     backToTop: { th: "กลับสู่ด้านบน", en: "Back to Top" },
-    quote: { th: "\"Code is poetry written for machines, designed for humans.\"", en: "\"Code is poetry written for machines, designed for humans.\"" }
+    quote: { th: "\"สร้างจริง ใช้งานได้จริง ผสานโลกซอฟต์แวร์ ฮาร์ดแวร์ และ AI ให้เป็นหนึ่งเดียว\"", en: "\"Pragmatic engineering: bridging software, hardware IoT, and AI into unified reality.\"" }
   }
 };

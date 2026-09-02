@@ -69,11 +69,11 @@ export default function AboutSection() {
                       <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent" />
                       <div className="relative z-10 w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-400 to-violet-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
                         <span className="font-mono text-3xl font-black text-slate-950">
-                          KW
+                          TS
                         </span>
                       </div>
                       <div className="mt-2 font-mono text-[10px] tracking-widest text-cyan-300">
-                        CREATIVE_DEV
+                        SOFTWARE_AI_DEV
                       </div>
                     </div>
                   </div>

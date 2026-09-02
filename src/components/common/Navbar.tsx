@@ -79,7 +79,7 @@ export default function Navbar() {
             <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-violet-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,245,212,0.4)]">
               <div className="w-full h-full bg-[#080c16] rounded-xl flex items-center justify-center">
                 <span className="font-mono text-base font-black bg-gradient-to-r from-cyan-300 to-violet-300 bg-clip-text text-transparent">
-                  KW
+                  TS
                 </span>
               </div>
             </div>
