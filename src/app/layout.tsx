@@ -101,7 +101,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-[#0B0E14] text-[#F1F3F5] font-sans antialiased min-h-screen selection:bg-[#6E8FC7]/30 selection:text-[#F1F3F5]">
+      <body className="bg-[#090c12] text-[#f2f4f7] font-sans antialiased min-h-screen selection:bg-[#7890aa]/30 selection:text-[#f2f4f7]">
         <LanguageProvider>
           {children}
         </LanguageProvider>

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 function subscribePointer(callback: () => void) {
   if (typeof window === 'undefined') return () => {};
@@ -87,14 +87,14 @@ export default function CustomCursor() {
     <div className="pointer-events-none fixed inset-0 z-[999999] overflow-hidden">
       {/* Precision Follower Ring - Minimalist & Non-intrusive */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none rounded-full border border-[#6E8FC7]/50"
+        className="fixed top-0 left-0 pointer-events-none rounded-full border border-[#7890aa]/50"
         animate={{
           x: mousePosition.x - (isHovered ? 18 : 12),
           y: mousePosition.y - (isHovered ? 18 : 12),
           width: isHovered ? 36 : 24,
           height: isHovered ? 36 : 24,
-          backgroundColor: isHovered ? 'rgba(110, 143, 199, 0.1)' : 'transparent',
-          borderColor: isHovered ? 'rgba(110, 143, 199, 0.8)' : 'rgba(110, 143, 199, 0.35)',
+          backgroundColor: isHovered ? 'rgba(120, 144, 170, 0.1)' : 'transparent',
+          borderColor: isHovered ? 'rgba(120, 144, 170, 0.8)' : 'rgba(120, 144, 170, 0.35)',
           scale: isClicking ? 0.85 : 1
         }}
         transition={{
@@ -107,7 +107,7 @@ export default function CustomCursor() {
 
       {/* Center Micro Dot - Off-white for high visibility */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none rounded-full bg-[#F1F3F5] shadow-sm shadow-black/50"
+        className="fixed top-0 left-0 pointer-events-none rounded-full bg-[#f2f4f7] shadow-sm shadow-black/50"
         animate={{
           x: mousePosition.x - 2.5,
           y: mousePosition.y - 2.5,

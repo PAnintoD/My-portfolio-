@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState, MouseEvent } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface TiltCardProps {
   children: React.ReactNode;

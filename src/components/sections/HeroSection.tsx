@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import HeroScene from '../3d/HeroScene';
 import MagneticButton from '../common/MagneticButton';
 import { useLanguage } from '../../context/LanguageContext';

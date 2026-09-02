@@ -1,16 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Manrope", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
 :root {
-  --background: #0B0E14;
-  --surface: #121722;
-  --surface-hover: #171D29;
-  --text-primary: #F1F3F5;
-  --text-secondary: #A8B0BD;
-  --text-muted: #737D8C;
-  --accent: #6E8FC7;
-  --accent-hover: #87A3D1;
+  --background: #090c12;
+  --surface: #0f141d;
+  --surface-elevated: #141a24;
+  --surface-hover: #19212d;
+  --text-primary: #f2f4f7;
+  --text-secondary: #a9b1bd;
+  --text-muted: #707a89;
+  --accent: #7890aa;
+  --accent-hover: #8fa5bd;
   --border: rgba(255, 255, 255, 0.08);
-  --success: #62A888;
+  --border-hover: rgba(143, 165, 189, 0.28);
+  --success: #75a58e;
 }
 
 * {
@@ -27,12 +36,13 @@ body {
   color: var(--text-primary);
   overflow-x: hidden;
   position: relative;
+  font-family: var(--font-sans);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-/* Custom Scrollbar - Subtle & Precision */
+/* Custom Scrollbar - Precision Engineering */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -40,41 +50,55 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1C2333;
+  background: var(--surface-hover);
   border-radius: 9999px;
-  border: 2px solid var(--background);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #283349;
-}
-
-/* Very Subtle Technical Grid (60-75% reduced opacity) */
-.bg-cyber-grid {
-  background-size: 48px 48px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
-}
-
-.bg-cyber-dots {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-/* Refined Glass Surfaces */
-.glass-panel {
-  background: var(--surface);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
 }
 
-.glass-nav {
-  background: rgba(11, 14, 20, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Hero Technical Grid */
+.bg-hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Subtle CSS Noise Texture Overlay */
+.bg-noise-texture {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Performant Infinite Marquee Animation - Pure CSS */
+@keyframes portfolio-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-portfolio-marquee {
+  display: flex;
+  width: max-content;
+  animation: portfolio-marquee 34s linear infinite;
+  will-change: transform;
+}
+
+.animate-portfolio-marquee:hover,
+.animate-portfolio-marquee:focus-within {
+  animation-play-state: paused;
+}
+
+/* Horizontal Gradient Edge Mask for Seamless Marquee */
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 /* Accessibility Focus Visible */
@@ -83,7 +107,7 @@ body {
   outline-offset: 3px;
 }
 
-/* Hide default cursor on desktop when custom cursor is enabled */
+/* Custom cursor support on desktop */
 @media (pointer: fine) {
   .custom-cursor-enabled,
   .custom-cursor-enabled * {
@@ -95,6 +119,11 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .animate-portfolio-marquee {
+    animation: none !important;
+    transform: none !important;
   }
 
   *,
