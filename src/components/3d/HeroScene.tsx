@@ -19,7 +19,7 @@ export default function HeroScene() {
     const height = container.clientHeight;
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.z = 7;
+    camera.position.z = 7.5;
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -34,46 +34,45 @@ export default function HeroScene() {
     const mainGroup = new THREE.Group();
     scene.add(mainGroup);
 
-    // 1. Core Geometric Wireframe Sphere (Icosahedron)
+    // 1. Core Geometric Wireframe Sphere (Icosahedron) - Subtle & Muted
     const icoGeometry = new THREE.IcosahedronGeometry(2.1, 2);
     const wireframeMaterial = new THREE.MeshBasicMaterial({
-      color: 0x00f5d4,
+      color: 0x6e8fc7, // Muted Blue accent
       wireframe: true,
       transparent: true,
-      opacity: 0.22
+      opacity: 0.09 // Very subtle, clean lines
     });
     const icoMesh = new THREE.Mesh(icoGeometry, wireframeMaterial);
     mainGroup.add(icoMesh);
 
-    // 2. Inner Glowing Core Sphere
-    const innerGeo = new THREE.IcosahedronGeometry(1.4, 1);
+    // 2. Inner Core Sphere - Very low opacity
+    const innerGeo = new THREE.IcosahedronGeometry(1.3, 1);
     const innerMat = new THREE.MeshBasicMaterial({
-      color: 0x8b5cf6,
+      color: 0x737d8c, // Cool Muted Slate
       wireframe: true,
       transparent: true,
-      opacity: 0.35
+      opacity: 0.11
     });
     const innerMesh = new THREE.Mesh(innerGeo, innerMat);
     mainGroup.add(innerMesh);
 
-    // 3. Orbiting Particle Cloud
+    // 3. Orbiting Particle Field - Subdued & Minimal
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 400 : 900;
+    const particleCount = isMobile ? 180 : 380;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const originalPositions = new Float32Array(particleCount * 3);
 
-    const cyan = new THREE.Color(0x00f5d4);
-    const purple = new THREE.Color(0x8b5cf6);
-    const blue = new THREE.Color(0x3b82f6);
+    const mutedBlue = new THREE.Color(0x6e8fc7);
+    const coolGray = new THREE.Color(0xa8b0bd);
+    const darkSlate = new THREE.Color(0x737d8c);
 
     for (let i = 0; i < particleCount; i++) {
-      // Distribute particles across a sphere shell
       const u = Math.random();
       const v = Math.random();
       const theta = u * 2.0 * Math.PI;
       const phi = Math.acos(2.0 * v - 1.0);
-      const r = 2.4 + (Math.random() - 0.5) * 1.2;
+      const r = 2.3 + (Math.random() - 0.5) * 1.0;
 
       const x = r * Math.sin(phi) * Math.cos(theta);
       const y = r * Math.sin(phi) * Math.sin(theta);
@@ -87,8 +86,8 @@ export default function HeroScene() {
       originalPositions[i * 3 + 1] = y;
       originalPositions[i * 3 + 2] = z;
 
-      // Interpolate colors between cyan, purple and blue
-      const mixedColor = i % 3 === 0 ? cyan : i % 3 === 1 ? purple : blue;
+      // Restrained palette: muted blue, cool gray, and soft slate
+      const mixedColor = i % 3 === 0 ? mutedBlue : i % 3 === 1 ? coolGray : darkSlate;
       colors[i * 3] = mixedColor.r;
       colors[i * 3 + 1] = mixedColor.g;
       colors[i * 3 + 2] = mixedColor.b;
@@ -98,39 +97,34 @@ export default function HeroScene() {
     particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Custom circular sprite texture for particles
+    // Soft circular sprite
     const canvas = document.createElement('canvas');
     canvas.width = 32;
     canvas.height = 32;
     const ctx = canvas.getContext('2d');
     if (ctx) {
       const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-      gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      gradient.addColorStop(0.3, 'rgba(255, 255, 255, 0.8)');
-      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      gradient.addColorStop(0, 'rgba(241, 243, 245, 0.9)');
+      gradient.addColorStop(0.3, 'rgba(168, 176, 189, 0.5)');
+      gradient.addColorStop(1, 'rgba(11, 14, 20, 0)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 32, 32);
     }
     const particleTexture = new THREE.CanvasTexture(canvas);
 
     const particleMaterial = new THREE.PointsMaterial({
-      size: isMobile ? 0.07 : 0.08,
+      size: isMobile ? 0.05 : 0.06,
       vertexColors: true,
       map: particleTexture,
       transparent: true,
-      opacity: 0.85,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.45, // Reduced from 0.85 to subtle 0.45
       depthWrite: false
     });
 
     const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
     mainGroup.add(particleSystem);
 
-    // Subtle ambient lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-    scene.add(ambientLight);
-
-    // Mouse Tracking with Smooth Lerp
+    // Mouse Tracking with Smooth Damping
     let mouseX = 0;
     let mouseY = 0;
     let targetX = 0;
@@ -140,8 +134,8 @@ export default function HeroScene() {
       const rect = container.getBoundingClientRect();
       const clientX = e.clientX - rect.left;
       const clientY = e.clientY - rect.top;
-      targetX = ((clientX / width) * 2 - 1) * 0.7;
-      targetY = (-(clientY / height) * 2 + 1) * 0.7;
+      targetX = ((clientX / width) * 2 - 1) * 0.4;
+      targetY = (-(clientY / height) * 2 + 1) * 0.4;
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -169,20 +163,18 @@ export default function HeroScene() {
       const elapsedTime = clock.getElapsedTime();
 
       if (!prefersReducedMotion) {
-        // Smooth lerp mouse tracking
-        mouseX += (targetX - mouseX) * 0.05;
-        mouseY += (targetY - mouseY) * 0.05;
+        // Slow, quiet, deliberate motion
+        mouseX += (targetX - mouseX) * 0.035;
+        mouseY += (targetY - mouseY) * 0.035;
 
-        mainGroup.rotation.y = elapsedTime * 0.15 + mouseX * 0.8;
-        mainGroup.rotation.x = mouseY * 0.5 + Math.sin(elapsedTime * 0.2) * 0.1;
+        mainGroup.rotation.y = elapsedTime * 0.08 + mouseX * 0.5;
+        mainGroup.rotation.x = mouseY * 0.3 + Math.sin(elapsedTime * 0.15) * 0.05;
 
-        icoMesh.rotation.y = -elapsedTime * 0.12;
-        icoMesh.rotation.z = Math.cos(elapsedTime * 0.2) * 0.15;
+        icoMesh.rotation.y = -elapsedTime * 0.06;
+        icoMesh.rotation.z = Math.cos(elapsedTime * 0.15) * 0.08;
 
-        innerMesh.rotation.x = elapsedTime * 0.25;
-        innerMesh.rotation.z = -elapsedTime * 0.18;
+        innerMesh.rotation.x = elapsedTime * 0.12;
 
-        // Subtle particle wave oscillation
         const posAttr = particleGeometry.attributes.position as THREE.BufferAttribute;
         const posArray = posAttr.array as Float32Array;
 
@@ -192,7 +184,7 @@ export default function HeroScene() {
           const oy = originalPositions[i3 + 1];
           const oz = originalPositions[i3 + 2];
 
-          const wave = Math.sin(elapsedTime * 1.5 + ox * 2 + oy * 2) * 0.08;
+          const wave = Math.sin(elapsedTime * 0.8 + ox + oy) * 0.04;
           posArray[i3] = ox + (ox / 2) * wave;
           posArray[i3 + 1] = oy + (oy / 2) * wave;
           posArray[i3 + 2] = oz + (oz / 2) * wave;
@@ -205,7 +197,6 @@ export default function HeroScene() {
 
     animate();
 
-    // Clean up on unmount
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);

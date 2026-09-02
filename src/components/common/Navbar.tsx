@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
 import { navItems, personalInfo } from '../../data/portfolioData';
 import LanguageToggle from './LanguageToggle';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 export default function Navbar() {
   const { t, language } = useLanguage();
@@ -15,14 +15,13 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Track active section with IntersectionObserver
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
     const observerOptions = {
@@ -61,11 +60,11 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'py-3.5 glass-nav shadow-lg shadow-black/30'
+            ? 'py-3 bg-[#0B0E14]/85 backdrop-blur-xl border-b border-white/08 shadow-md shadow-black/20'
             : 'py-5 bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo / Monogram */}
           <a
             href="#home"
@@ -76,26 +75,24 @@ export default function Navbar() {
             className="group flex items-center gap-3 focus-visible:outline-none"
             aria-label="Go to top"
           >
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-violet-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,245,212,0.4)]">
-              <div className="w-full h-full bg-[#080c16] rounded-xl flex items-center justify-center">
-                <span className="font-mono text-base font-black bg-gradient-to-r from-cyan-300 to-violet-300 bg-clip-text text-transparent">
-                  TS
-                </span>
-              </div>
+            <div className="w-9 h-9 rounded-lg bg-[#121722] border border-white/10 flex items-center justify-center transition-colors group-hover:border-white/20">
+              <span className="font-mono text-sm font-bold text-[#F1F3F5]">
+                TS
+              </span>
             </div>
             <div className="hidden sm:flex flex-col">
-              <span className="font-bold text-sm tracking-wider text-slate-100 uppercase group-hover:text-cyan-300 transition-colors">
+              <span className="font-semibold text-sm tracking-normal text-[#F1F3F5] group-hover:text-white transition-colors">
                 {t(personalInfo.name)}
               </span>
-              <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping inline-block" />
+              <span className="text-[11px] font-mono text-[#737D8C] flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#62A888] inline-block" />
                 <span>{language === 'th' ? 'พร้อมรับงาน' : 'AVAILABLE FOR WORK'}</span>
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-1.5 bg-slate-900/60 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
+          <nav className="hidden md:flex items-center gap-1 bg-[#121722]/80 p-1 rounded-xl border border-white/08">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -106,15 +103,15 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className={`relative px-4 py-2 text-xs lg:text-sm font-medium rounded-full transition-colors duration-200 ${
-                    isActive ? 'text-cyan-300 font-semibold' : 'text-slate-300 hover:text-white'
+                  className={`relative px-3.5 py-1.5 text-xs font-medium rounded-lg transition-colors duration-150 ${
+                    isActive ? 'text-[#F1F3F5]' : 'text-[#A8B0BD] hover:text-[#F1F3F5]'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeNavHighlight"
-                      className="absolute inset-0 bg-white/[0.08] border border-cyan-400/30 rounded-full shadow-[0_0_15px_rgba(0,245,212,0.2)]"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      className="absolute inset-0 bg-[#171D29] border border-white/10 rounded-lg shadow-sm"
+                      transition={{ type: 'spring', stiffness: 450, damping: 35 }}
                     />
                   )}
                   <span className="relative z-10">{t(item.label)}</span>
@@ -133,10 +130,9 @@ export default function Navbar() {
                 e.preventDefault();
                 handleNavClick('#contact');
               }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs lg:text-sm font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-300 hover:from-cyan-300 hover:to-teal-200 transition-all shadow-[0_0_20px_rgba(0,245,212,0.3)] hover:shadow-[0_0_30px_rgba(0,245,212,0.5)] active:scale-95"
+              className="inline-flex items-center px-4 py-1.5 rounded-lg text-xs font-medium text-[#0B0E14] bg-[#6E8FC7] hover:bg-[#87A3D1] transition-all shadow-sm active:scale-95"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>{language === 'th' ? 'ติดต่อเรา' : 'Let’s Talk'}</span>
+              <span>{language === 'th' ? 'ติดต่อพูดคุย' : "Let's Connect"}</span>
             </a>
           </div>
 
@@ -147,7 +143,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-slate-200 hover:text-white focus-visible:outline-none"
+              className="p-2 rounded-lg bg-[#121722] border border-white/10 text-[#A8B0BD] hover:text-[#F1F3F5] focus-visible:outline-none"
               aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -160,51 +156,51 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-30 md:hidden bg-[#05070e]/95 backdrop-blur-2xl flex flex-col pt-24 pb-8 px-6"
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-30 md:hidden bg-[#0B0E14]/98 backdrop-blur-xl flex flex-col pt-24 pb-8 px-6"
           >
-            <div className="flex flex-col space-y-3 flex-1 justify-center">
+            <div className="flex flex-col space-y-2 flex-1 justify-center">
               {navItems.map((item, index) => {
                 const isActive = activeSection === item.id;
                 return (
                   <motion.a
                     key={item.id}
                     href={item.href}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.06 }}
+                    transition={{ delay: index * 0.04 }}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavClick(item.href);
                     }}
-                    className={`flex items-center justify-between px-4 py-3.5 rounded-xl border text-lg font-bold transition-all ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl border text-base font-medium transition-all ${
                       isActive
-                        ? 'bg-cyan-500/10 border-cyan-400/40 text-cyan-300'
-                        : 'border-white/5 text-slate-300 hover:bg-white/5 hover:text-white'
+                        ? 'bg-[#121722] border-white/15 text-[#F1F3F5]'
+                        : 'border-transparent text-[#A8B0BD] hover:bg-[#121722]/50 hover:text-white'
                     }`}
                   >
                     <span>{t(item.label)}</span>
-                    <ArrowUpRight className={`w-5 h-5 ${isActive ? 'text-cyan-400' : 'text-slate-500'}`} />
+                    <ArrowUpRight className={`w-4 h-4 ${isActive ? 'text-[#6E8FC7]' : 'text-[#737D8C]'}`} />
                   </motion.a>
                 );
               })}
             </div>
 
-            <div className="pt-6 border-t border-white/10 flex flex-col gap-3">
+            <div className="pt-6 border-t border-white/08 flex flex-col gap-3">
               <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick('#contact');
                 }}
-                className="w-full text-center py-3.5 rounded-xl text-base font-bold text-slate-900 bg-gradient-to-r from-cyan-400 to-teal-300 shadow-[0_0_20px_rgba(0,245,212,0.4)]"
+                className="w-full text-center py-3 rounded-xl text-sm font-semibold text-[#0B0E14] bg-[#6E8FC7] hover:bg-[#87A3D1] transition-all"
               >
-                {language === 'th' ? 'เริ่มต้นพูดคุยโปรเจกต์' : 'Initiate Project Discussion'}
+                {language === 'th' ? 'ติดต่อพูดคุยโปรเจกต์' : 'Initiate Project Discussion'}
               </a>
-              <p className="text-center text-xs font-mono text-slate-500">
+              <p className="text-center text-xs font-mono text-[#737D8C]">
                 {personalInfo.email}
               </p>
             </div>

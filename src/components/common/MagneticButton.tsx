@@ -35,7 +35,7 @@ export default function MagneticButton({
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
-    const pullStrength = 0.3;
+    const pullStrength = 0.18; // Subtle & precise
     const x = (e.clientX - centerX) * pullStrength;
     const y = (e.clientY - centerY) * pullStrength;
 
@@ -48,25 +48,23 @@ export default function MagneticButton({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 text-slate-950 font-semibold shadow-[0_0_25px_-5px_rgba(0,245,212,0.5)] hover:shadow-[0_0_35px_0px_rgba(0,245,212,0.7)]',
+      'bg-[#6E8FC7] hover:bg-[#87A3D1] text-[#0B0E14] font-semibold shadow-md shadow-black/20 hover:shadow-lg transition-all duration-200',
     secondary:
-      'bg-gradient-to-r from-violet-600 to-purple-600 text-white font-medium shadow-[0_0_25px_-5px_rgba(139,92,246,0.4)] hover:shadow-[0_0_35px_0px_rgba(139,92,246,0.6)]',
+      'bg-[#171D29] hover:bg-[#1C2333] text-[#F1F3F5] font-medium border border-white/08 hover:border-white/15 transition-all duration-200',
     outline:
-      'border border-cyan-400/40 text-cyan-300 hover:border-cyan-300 hover:bg-cyan-950/30 hover:text-cyan-200 backdrop-blur-sm',
+      'border border-[#6E8FC7]/40 text-[#6E8FC7] hover:border-[#6E8FC7] hover:bg-[#6E8FC7]/10 hover:text-[#87A3D1] transition-all duration-200',
     glass:
-      'bg-white/[0.06] text-white border border-white/10 hover:border-white/25 hover:bg-white/[0.12] backdrop-blur-md'
+      'bg-[#121722] text-[#F1F3F5] border border-white/08 hover:border-white/20 hover:bg-[#171D29] transition-all duration-200'
   };
 
   const baseContent = (
     <motion.div
       animate={{ x: position.x, y: position.y }}
-      transition={{ type: 'spring', damping: 15, stiffness: 200, mass: 0.2 }}
-      className={`relative inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm md:text-base tracking-wide transition-colors duration-200 select-none overflow-hidden group ${
+      transition={{ type: 'spring', damping: 20, stiffness: 220, mass: 0.2 }}
+      className={`relative inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-medium tracking-normal transition-all duration-200 select-none overflow-hidden group ${
         variantStyles[variant]
       } ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${className}`}
     >
-      {/* Light sheen sweeping across */}
-      <span className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-700 group-hover:left-[100%]" />
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </motion.div>
   );

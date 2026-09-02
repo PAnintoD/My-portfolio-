@@ -14,8 +14,8 @@ interface TiltCardProps {
 export default function TiltCard({
   children,
   className = '',
-  maxTilt = 8,
-  glareOpacity = 0.15,
+  maxTilt = 4,
+  glareOpacity = 0.05,
   onClick
 }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -68,11 +68,11 @@ export default function TiltCard({
         animate={{
           rotateX: isHovered ? rotateX : 0,
           rotateY: isHovered ? rotateY : 0,
-          scale: isHovered ? 1.015 : 1
+          y: isHovered ? -3 : 0
         }}
         transition={{
           type: 'spring',
-          damping: 20,
+          damping: 24,
           stiffness: 220,
           mass: 0.4
         }}
@@ -81,12 +81,12 @@ export default function TiltCard({
       >
         {children}
 
-        {/* Dynamic Specular Glare Overlay */}
+        {/* Dynamic Specular Glare Overlay - Subdued */}
         <div
           className="absolute inset-0 pointer-events-none transition-opacity duration-300 rounded-[inherit]"
           style={{
             opacity: isHovered ? glareOpacity : 0,
-            background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255, 255, 255, 0.45) 0%, transparent 60%)`,
+            background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255, 255, 255, 0.18) 0%, transparent 60%)`,
             mixBlendMode: 'overlay'
           }}
         />

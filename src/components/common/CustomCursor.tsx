@@ -69,41 +69,41 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Outer Follower Ring */}
+      {/* Precision Follower Ring - Minimalist & Non-intrusive */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-cyan-400/60 mix-blend-screen"
+        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-[#6E8FC7]/40"
         animate={{
-          x: mousePosition.x - (isHovered ? 24 : 16),
-          y: mousePosition.y - (isHovered ? 24 : 16),
-          width: isHovered ? 48 : 32,
-          height: isHovered ? 48 : 32,
-          backgroundColor: isHovered ? 'rgba(0, 245, 212, 0.15)' : 'rgba(0, 245, 212, 0.03)',
-          borderColor: isHovered ? 'rgba(0, 245, 212, 0.9)' : 'rgba(0, 245, 212, 0.4)',
-          scale: isClicking ? 0.85 : 1
+          x: mousePosition.x - (isHovered ? 20 : 14),
+          y: mousePosition.y - (isHovered ? 20 : 14),
+          width: isHovered ? 40 : 28,
+          height: isHovered ? 40 : 28,
+          backgroundColor: isHovered ? 'rgba(110, 143, 199, 0.08)' : 'transparent',
+          borderColor: isHovered ? 'rgba(110, 143, 199, 0.65)' : 'rgba(110, 143, 199, 0.25)',
+          scale: isClicking ? 0.9 : 1
         }}
         transition={{
           type: 'spring',
-          damping: 28,
-          stiffness: 350,
-          mass: 0.5
+          damping: 26,
+          stiffness: 320,
+          mass: 0.4
         }}
       />
 
       {/* Center Micro Dot */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full bg-cyan-300 shadow-[0_0_12px_#00f5d4]"
+        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full bg-[#A8B0BD]"
         animate={{
-          x: mousePosition.x - 3,
-          y: mousePosition.y - 3,
-          scale: isClicking ? 0.6 : isHovered ? 1.4 : 1
+          x: mousePosition.x - 2.5,
+          y: mousePosition.y - 2.5,
+          scale: isClicking ? 0.7 : isHovered ? 1.2 : 1
         }}
         transition={{
           type: 'spring',
           damping: 35,
           stiffness: 600,
-          mass: 0.15
+          mass: 0.12
         }}
-        style={{ width: 6, height: 6 }}
+        style={{ width: 5, height: 5 }}
       />
     </>
   );

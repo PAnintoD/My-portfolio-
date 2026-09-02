@@ -14,7 +14,7 @@ import Footer from '../components/common/Footer';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#05070e] text-slate-100 flex flex-col selection:bg-cyan-400 selection:text-slate-950 overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#0B0E14] text-[#F1F3F5] flex flex-col selection:bg-[#6E8FC7]/30 selection:text-[#F1F3F5] overflow-x-hidden">
       {/* HUD Boot Sequence / Loading Screen */}
       <LoadingScreen />
 

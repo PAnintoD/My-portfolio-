@@ -188,8 +188,8 @@ export const projects: Project[] = [
     liveUrl: "https://github.com/PAnintoD",
     githubUrl: "https://github.com/PAnintoD",
     featured: true,
-    accentColor: "#00F5D4",
-    gradient: "from-teal-500/20 via-cyan-500/10 to-transparent",
+    accentColor: "#6E8FC7",
+    gradient: "from-[#171D29] via-[#141A26] to-[#0E131C]",
     year: "2024",
     role: {
       th: "AI & Computer Vision Developer",
@@ -240,8 +240,8 @@ export const projects: Project[] = [
     liveUrl: "https://github.com/PAnintoD",
     githubUrl: "https://github.com/PAnintoD",
     featured: true,
-    accentColor: "#8B5CF6",
-    gradient: "from-purple-500/20 via-indigo-500/10 to-transparent",
+    accentColor: "#6E8FC7",
+    gradient: "from-[#171D29] via-[#141A26] to-[#0E131C]",
     year: "2024",
     role: {
       th: "Software & Embedded Systems Developer",
@@ -284,8 +284,8 @@ export const projects: Project[] = [
     liveUrl: "https://github.com/PAnintoD",
     githubUrl: "https://github.com/PAnintoD",
     featured: true,
-    accentColor: "#3B82F6",
-    gradient: "from-blue-500/20 via-sky-500/10 to-transparent",
+    accentColor: "#6E8FC7",
+    gradient: "from-[#171D29] via-[#141A26] to-[#0E131C]",
     year: "2023",
     role: {
       th: "Full-Stack Web Developer",
@@ -328,8 +328,8 @@ export const projects: Project[] = [
     liveUrl: "https://github.com/PAnintoD",
     githubUrl: "https://github.com/PAnintoD",
     featured: true,
-    accentColor: "#10B981",
-    gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
+    accentColor: "#6E8FC7",
+    gradient: "from-[#171D29] via-[#141A26] to-[#0E131C]",
     year: "2023",
     role: {
       th: "Automation & Backend Engineer",
