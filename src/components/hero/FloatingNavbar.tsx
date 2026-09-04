@@ -92,7 +92,7 @@ export default function FloatingNavbar() {
 
   return (
     <motion.header
-      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -16 }}
+      initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-40 w-[calc(100%-28px)] max-w-[920px] transition-all duration-300 ${

@@ -121,7 +121,7 @@ export default function PortfolioHero() {
         <div className="flex flex-col items-start text-left">
           {/* 1. Eyebrow & Availability Badge */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="mb-6"
@@ -133,7 +133,7 @@ export default function PortfolioHero() {
           <h1 className="font-display text-[42px] leading-[0.98] sm:text-[54px] md:text-[66px] lg:text-[74px] font-semibold tracking-[-0.045em] text-[#F2F4F7]">
             <span className="block overflow-hidden">
               <motion.span
-                initial={shouldReduceMotion ? { opacity: 0 } : { y: '100%' }}
+                initial={{ y: '100%' }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 className="block"
@@ -143,7 +143,7 @@ export default function PortfolioHero() {
             </span>
             <span className="block overflow-hidden">
               <motion.span
-                initial={shouldReduceMotion ? { opacity: 0 } : { y: '100%' }}
+                initial={{ y: '100%' }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="block"
@@ -153,7 +153,7 @@ export default function PortfolioHero() {
             </span>
             <span className="block overflow-hidden">
               <motion.span
-                initial={shouldReduceMotion ? { opacity: 0 } : { y: '100%' }}
+                initial={{ y: '100%' }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 className="block text-[#8FA5BD]"
@@ -165,7 +165,7 @@ export default function PortfolioHero() {
 
           {/* 3. Subheadline Paragraph */}
           <motion.p
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="mt-7 max-w-[660px] font-sans text-[15px] sm:text-[16px] md:text-[17px] leading-7 md:leading-8 text-[#A9B1BD]"
@@ -175,7 +175,7 @@ export default function PortfolioHero() {
 
           {/* 4. CTA Buttons Row with Magnetic Hover Physics */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
             className="mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto"
@@ -230,7 +230,7 @@ export default function PortfolioHero() {
 
         {/* Right Column: Interactive 3D Engineering Object */}
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.92 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="w-full flex justify-center lg:justify-end"

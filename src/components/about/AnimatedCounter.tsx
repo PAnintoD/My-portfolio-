@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useInView, useReducedMotion } from 'motion/react';
 
 interface AnimatedCounterProps {
@@ -12,10 +12,9 @@ export default function AnimatedCounter({ value, className = '' }: AnimatedCount
   const shouldReduceMotion = useReducedMotion();
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-40px' });
-  const [displayValue, setDisplayValue] = useState(shouldReduceMotion ? value : '0');
 
   useEffect(() => {
-    if (shouldReduceMotion || !isInView) return;
+    if (shouldReduceMotion || !isInView || !ref.current) return;
 
     // Extract numeric portion and suffix (e.g., "5+" -> number 5, suffix "+")
     const numericMatch = value.match(/\d+/);
@@ -30,6 +29,9 @@ export default function AnimatedCounter({ value, className = '' }: AnimatedCount
     const duration = 1200; // 1.2s
     const startTime = performance.now();
 
+    ref.current.textContent = `${prefix}0${suffix}`;
+
+    let rafId: number;
     const animateCount = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
@@ -37,21 +39,26 @@ export default function AnimatedCounter({ value, className = '' }: AnimatedCount
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const currentNumber = Math.floor(easeOut * targetNumber);
 
-      setDisplayValue(`${prefix}${currentNumber}${suffix}`);
+      if (ref.current) {
+        ref.current.textContent = `${prefix}${currentNumber}${suffix}`;
+      }
 
       if (progress < 1) {
-        requestAnimationFrame(animateCount);
-      } else {
-        setDisplayValue(value);
+        rafId = requestAnimationFrame(animateCount);
+      } else if (ref.current) {
+        ref.current.textContent = value;
       }
     };
 
-    requestAnimationFrame(animateCount);
+    rafId = requestAnimationFrame(animateCount);
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [isInView, value, shouldReduceMotion]);
 
   return (
     <span ref={ref} className={className}>
-      {shouldReduceMotion ? value : displayValue}
+      {value}
     </span>
   );
 }

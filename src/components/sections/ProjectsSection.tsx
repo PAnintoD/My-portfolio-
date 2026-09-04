@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Project } from '../../types/portfolio';
 import { projects, uiContent } from '../../data/portfolioData';
 import { useLanguage } from '../../context/LanguageContext';
@@ -81,7 +81,7 @@ export default function ProjectsSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}

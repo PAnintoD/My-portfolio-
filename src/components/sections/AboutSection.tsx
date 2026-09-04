@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../../context/LanguageContext';
 import { personalInfo, uiContent } from '../../data/portfolioData';
 import IdentityCard from '../about/IdentityCard';
@@ -10,7 +10,6 @@ import { MapPin } from 'lucide-react';
 
 export default function AboutSection() {
   const { t } = useLanguage();
-  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section
@@ -20,7 +19,7 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header with Number Reveal */}
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -40,7 +39,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
           {/* Profile Identity Card with 3D perspective */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -51,7 +50,7 @@ export default function AboutSection() {
 
           {/* Bio Text & Mindset */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -65,7 +64,7 @@ export default function AboutSection() {
             {personalInfo.aboutBio.map((paragraph, index) => (
               <motion.p
                 key={index}
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -94,7 +93,7 @@ export default function AboutSection() {
           {personalInfo.stats.map((stat, idx) => (
             <motion.div
               key={idx}
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.45, delay: idx * 0.08 }}

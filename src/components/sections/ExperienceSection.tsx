@@ -1,14 +1,13 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useSpring, useReducedMotion } from 'motion/react';
+import { motion, useScroll, useSpring } from 'motion/react';
 import { experiences, uiContent } from '../../data/portfolioData';
 import { useLanguage } from '../../context/LanguageContext';
 import { Briefcase, GraduationCap, MapPin, CheckCircle } from 'lucide-react';
 
 export default function ExperienceSection() {
   const { t } = useLanguage();
-  const shouldReduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -31,7 +30,7 @@ export default function ExperienceSection() {
       <div className="max-w-5xl mx-auto">
         {/* Section Header with Section Number */}
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -56,12 +55,10 @@ export default function ExperienceSection() {
           <div className="absolute left-[11px] sm:left-[19px] md:left-[23px] top-4 bottom-4 w-[2px] bg-white/[0.08]" />
 
           {/* Animated Dynamic Drawing Track */}
-          {!shouldReduceMotion && (
-            <motion.div
-              style={{ scaleY: lineHeight }}
-              className="absolute left-[11px] sm:left-[19px] md:left-[23px] top-4 bottom-4 w-[2px] bg-[#7890AA] origin-top opacity-80"
-            />
-          )}
+          <motion.div
+            style={{ scaleY: lineHeight }}
+            className="absolute left-[11px] sm:left-[19px] md:left-[23px] top-4 bottom-4 w-[2px] bg-[#7890AA] origin-top opacity-80 motion-reduce:hidden"
+          />
 
           {experiences.map((item, index) => {
             const isWork = item.type === 'work';
@@ -70,7 +67,7 @@ export default function ExperienceSection() {
             return (
               <motion.div
                 key={item.id}
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}

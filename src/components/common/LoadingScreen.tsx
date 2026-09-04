@@ -16,6 +16,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   const { t } = useLanguage();
   const [progress, setProgress] = useState(0);
   const [isDone, setIsDone] = useState(false);
+  const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   const isAlreadySeen = useSyncExternalStore(
     emptySubscribe,
@@ -32,6 +33,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   const shouldSkip = shouldReduceMotion || isAlreadySeen;
 
   useEffect(() => {
+    if (!isMounted) return;
     if (shouldSkip) {
       if (onLoadingComplete) onLoadingComplete();
       return;
@@ -56,7 +58,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
     }, 45);
 
     return () => clearInterval(interval);
-  }, [shouldSkip, onLoadingComplete]);
+  }, [isMounted, shouldSkip, onLoadingComplete]);
 
   const handleSkip = () => {
     try {
@@ -66,7 +68,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
     if (onLoadingComplete) onLoadingComplete();
   };
 
-  if (shouldSkip || isDone) return null;
+  if (!isMounted || shouldSkip || isDone) return null;
 
   return (
     <AnimatePresence>

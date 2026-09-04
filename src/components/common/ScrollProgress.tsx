@@ -1,9 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useSyncExternalStore } from 'react';
 import { motion, useScroll, useSpring, useReducedMotion } from 'motion/react';
 
+const emptySubscribe = () => () => {};
+
 export default function ScrollProgress() {
+  const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
 
@@ -19,7 +22,7 @@ export default function ScrollProgress() {
     restDelta: 0.001
   });
 
-  if (shouldReduceMotion) return null;
+  if (!isMounted || shouldReduceMotion) return null;
 
   return (
     <>

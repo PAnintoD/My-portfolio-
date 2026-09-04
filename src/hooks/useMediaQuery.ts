@@ -1,19 +1,24 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
+import { useCallback, useSyncExternalStore } from 'react';
+
+const getServerSnapshot = () => false;
 
 export function useMediaQuery(query: string): boolean {
-  const subscribe = (callback: () => void) => {
-    if (typeof window === 'undefined') return () => {};
-    const mediaQuery = window.matchMedia(query);
-    mediaQuery.addEventListener('change', callback);
-    return () => mediaQuery.removeEventListener('change', callback);
-  };
+  const subscribe = useCallback(
+    (callback: () => void) => {
+      if (typeof window === 'undefined') return () => {};
+      const mediaQuery = window.matchMedia(query);
+      mediaQuery.addEventListener('change', callback);
+      return () => mediaQuery.removeEventListener('change', callback);
+    },
+    [query]
+  );
 
-  const getSnapshot = () => {
+  const getSnapshot = useCallback(() => {
     if (typeof window === 'undefined') return false;
     return window.matchMedia(query).matches;
-  };
+  }, [query]);
 
-  return useSyncExternalStore(subscribe, getSnapshot, () => false);
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }

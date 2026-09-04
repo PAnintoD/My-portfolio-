@@ -109,7 +109,7 @@ export default function SkillsSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -131,23 +131,21 @@ export default function SkillsSection() {
         {/* Interactive Technical System Map Container */}
         <div className="relative rounded-3xl border border-white/[0.08] bg-[#0F141D]/90 p-6 sm:p-8 md:p-10 shadow-2xl shadow-black/50 overflow-hidden">
           {/* Subtle Radar Sweep Animation (Runs Once upon entering view) */}
-          {!shouldReduceMotion && (
-            <motion.div
-              initial={{ opacity: 0, rotate: 0 }}
-              whileInView={{
-                opacity: [0, 0.25, 0],
-                rotate: 360
-              }}
-              viewport={{ once: true }}
-              transition={{ duration: 3.5, ease: 'linear' }}
-              className="absolute -top-32 -left-32 size-[650px] pointer-events-none"
-              style={{
-                background:
-                  'conic-gradient(from 0deg at 50% 50%, rgba(120, 144, 170, 0.25) 0deg, transparent 60deg, transparent 360deg)'
-              }}
-              aria-hidden="true"
-            />
-          )}
+          <motion.div
+            initial={{ opacity: 0, rotate: 0 }}
+            whileInView={{
+              opacity: [0, 0.25, 0],
+              rotate: 360
+            }}
+            viewport={{ once: true }}
+            transition={{ duration: 3.5, ease: 'linear' }}
+            className="absolute -top-32 -left-32 size-[650px] pointer-events-none motion-reduce:hidden"
+            style={{
+              background:
+                'conic-gradient(from 0deg at 50% 50%, rgba(120, 144, 170, 0.25) 0deg, transparent 60deg, transparent 360deg)'
+            }}
+            aria-hidden="true"
+          />
 
           {/* System Status Header */}
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.07] pb-5 mb-8">
@@ -176,7 +174,7 @@ export default function SkillsSection() {
               return (
                 <motion.div
                   key={domain.id}
-                  initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.5, delay: domainIdx * 0.08 }}

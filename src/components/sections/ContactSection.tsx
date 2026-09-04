@@ -128,7 +128,7 @@ export default function ContactSection() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header with Section Number */}
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -150,7 +150,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left Column: Direct Info & Social Channels */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -234,7 +234,7 @@ export default function ContactSection() {
 
           {/* Right Column: Interactive Form */}
           <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
