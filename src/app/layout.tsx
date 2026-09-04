@@ -1,22 +1,29 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, JetBrains_Mono } from 'next/font/google';
+import { Inter, Manrope, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '../context/LanguageContext';
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   variable: '--font-sans',
   subsets: ['latin'],
   display: 'swap',
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const manrope = Manrope({
+  variable: '--font-display',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ['400', '500', '600'],
   variable: '--font-mono',
   subsets: ['latin'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'ธนภูมิ สีแดง (Thanapoom Sidaeng) // Software, Automation & AI Vision Developer',
+  title: 'Thanapoom Sidaeng — Software, Automation & AI Vision Developer',
   description:
     'Portfolio ของ ธนภูมิ สีแดง (Thanapoom Sidaeng / PAnintoD) - นักพัฒนาซอฟต์แวร์, ระบบอัตโนมัติ (Automation), AI Computer Vision (YOLOv8, OCR) และการเชื่อมต่อฮาร์ดแวร์ IoT',
   keywords: [
@@ -66,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth dark`}>
+    <html lang="th" className={`${inter.variable} ${manrope.variable} ${ibmPlexMono.variable} scroll-smooth dark`}>
       <head>
         {/* Structured Data for SEO / Personal Schema */}
         <script
@@ -101,7 +108,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-[#090c12] text-[#f2f4f7] font-sans antialiased min-h-screen selection:bg-[#7890aa]/30 selection:text-[#f2f4f7]">
+      <body className={`${inter.variable} ${manrope.variable} ${ibmPlexMono.variable} bg-[#080A0F] text-[#F0F3F6] font-sans antialiased min-h-screen selection:bg-[#7F9AB8]/30 selection:text-[#F0F3F6]`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

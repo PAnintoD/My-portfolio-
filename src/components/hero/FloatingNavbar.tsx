@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
@@ -27,17 +27,15 @@ export default function FloatingNavbar() {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Scroll detection for compression and elevation
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 80);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Section Observer for Active Navigation Highlight
   useEffect(() => {
     const sectionIds = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
     const observer = new IntersectionObserver(
@@ -59,7 +57,6 @@ export default function FloatingNavbar() {
     return () => observer.disconnect();
   }, []);
 
-  // Keyboard accessibility: ESC key to close mobile menu & focus trapping + scroll lock
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && mobileMenuOpen) {
@@ -92,44 +89,46 @@ export default function FloatingNavbar() {
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: -16 }}
+      initial={{ opacity: 0, y: -24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-40 w-[calc(100%-28px)] max-w-[920px] transition-all duration-300 ${
-        isScrolled ? 'top-3 md:top-4' : 'top-4 md:top-6'
-      }`}
+      transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-32px)] max-w-[1080px] transition-all duration-300"
     >
       <nav
         aria-label="Primary Navigation"
-        className={`flex items-center justify-between rounded-full border border-white/[0.08] transition-all duration-300 ${
+        className={`flex items-center justify-between rounded-full transition-all duration-300 ${
           isScrolled
-            ? 'h-12 md:h-13 bg-[#0B1018]/95 px-2.5 pl-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-3xl'
-            : 'h-14 bg-[#0B1018]/80 px-2.5 pl-3 shadow-[0_12px_40px_rgba(0,0,0,0.24)] backdrop-blur-2xl'
+            ? 'h-13 md:h-14 border border-white/[0.16] bg-[#0A0E16]/90 px-2.5 pl-4 shadow-[0_20px_50px_rgba(0,0,0,0.45)] backdrop-blur-2xl'
+            : 'h-14 md:h-16 border border-white/[0.10] bg-[#0A0E16]/75 px-2.5 pl-4 shadow-[0_16px_50px_rgba(0,0,0,0.30)] backdrop-blur-2xl'
         }`}
       >
-        {/* Left: Interactive Logo & Monogram */}
+        {/* Left identity: Circular mark "TS", "THANAPOOM", small status dot, "AVAILABLE" */}
         <a
           href="#home"
           onClick={(e) => {
             e.preventDefault();
             handleNavClick('#home');
           }}
-          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8FA5BD] rounded-full group"
+          className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7F9AB8] rounded-full group select-none"
           aria-label="Thanapoom Sidaeng Home"
         >
-          <motion.div
-            whileHover={shouldReduceMotion ? {} : { rotate: 8 }}
-            transition={{ type: 'spring', stiffness: 280, damping: 20 }}
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.04] font-display text-[12px] font-semibold text-[#DCE1E7] transition-colors group-hover:border-white/[0.22] group-hover:bg-white/[0.08]"
-          >
+          <div className="flex size-9 shrink-0 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.04] font-display text-[12px] font-semibold text-[#F0F3F6] transition-colors group-hover:border-white/[0.22] group-hover:bg-white/[0.08]">
             TS
-          </motion.div>
-          <span className="hidden sm:block ml-2.5 font-mono text-[10px] tracking-[0.14em] text-[#A9B1BD] uppercase font-medium">
-            THANAPOOM
-          </span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <span className="font-mono text-[11px] tracking-[0.14em] text-[#F0F3F6] uppercase font-semibold">
+              THANAPOOM
+            </span>
+            <div className="hidden sm:flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              <span className="size-1.5 rounded-full bg-[#78A68E] animate-pulse" />
+              <span className="font-mono text-[9px] tracking-[0.12em] text-[#78A68E] font-medium">
+                AVAILABLE
+              </span>
+            </div>
+          </div>
         </a>
 
-        {/* Desktop Navigation Links with layoutId active indicator */}
+        {/* Center navigation links: About, Skills, Projects, Experience */}
         <div className="hidden md:flex items-center gap-1 relative">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
@@ -142,18 +141,18 @@ export default function FloatingNavbar() {
                   handleNavClick(item.href);
                 }}
                 aria-current={isActive ? 'true' : undefined}
-                className="relative rounded-full px-4 py-2 text-[12px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8FA5BD]"
+                className="relative rounded-full px-4 py-2 text-[12px] font-medium tracking-[0.04em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7F9AB8]"
               >
                 {isActive && (
                   <motion.span
                     layoutId="active-nav-indicator"
-                    className="absolute inset-0 rounded-full bg-white/[0.07] border border-white/[0.08]"
+                    className="absolute inset-0 rounded-full bg-white/[0.08] border border-white/[0.10]"
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                   />
                 )}
                 <span
                   className={`relative z-10 transition-colors duration-200 ${
-                    isActive ? 'text-[#F2F4F7] font-semibold' : 'text-[#8B95A3] hover:text-[#F2F4F7]'
+                    isActive ? 'text-[#F0F3F6] font-semibold' : 'text-[#A5AFBC] hover:text-[#F0F3F6]'
                   }`}
                 >
                   {item.label}
@@ -163,23 +162,21 @@ export default function FloatingNavbar() {
           })}
         </div>
 
-        {/* Right Actions: Language Switcher, CTA Button & Mobile Toggle */}
+        {/* Right CTA: Language switcher & "LET'S TALK" */}
         <div className="flex items-center gap-2">
-          {/* Subtle Language Switcher */}
           <div className="hidden sm:block">
             <LanguageToggle />
           </div>
 
-          {/* Let's Talk CTA */}
           <a
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('#contact');
             }}
-            className="inline-flex h-10 items-center justify-center gap-1.5 rounded-full border border-white/[0.1] bg-[#F2F4F7] px-4 text-[12px] font-semibold text-[#0A0E15] transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8FA5BD]"
+            className="inline-flex h-10 items-center justify-center gap-1.5 rounded-full border border-white/[0.12] bg-[#F0F3F6] px-4 text-[12px] font-semibold tracking-[0.06em] text-[#080A0F] transition-all hover:bg-white hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7F9AB8]"
           >
-            <span>Let’s Talk</span>
+            <span>LET’S TALK</span>
             <ArrowUpRight className="size-3.5" />
           </a>
 
@@ -191,74 +188,58 @@ export default function FloatingNavbar() {
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation-drawer"
             aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
-            className="flex md:hidden size-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.04] text-[#A9B1BD] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8FA5BD]"
+            className="flex md:hidden size-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.04] text-[#A5AFBC] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7F9AB8]"
           >
             {mobileMenuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
           </button>
         </div>
       </nav>
 
-      {/* Accessible Mobile Navigation Drawer with Clipped Mask */}
+      {/* Mobile Animated Dropdown Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             id="mobile-navigation-drawer"
             ref={mobileMenuRef}
-            initial={
-              shouldReduceMotion
-                ? { opacity: 0 }
-                : {
-                    opacity: 0,
-                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
-                  }
-            }
-            animate={{
-              opacity: 1,
-              clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
-            }}
-            exit={
-              shouldReduceMotion
-                ? { opacity: 0 }
-                : {
-                    opacity: 0,
-                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
-                  }
-            }
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-2 w-full rounded-3xl border border-white/[0.08] bg-[#0B1018]/95 p-4 shadow-2xl backdrop-blur-3xl md:hidden"
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden mt-2 w-full rounded-3xl border border-white/[0.10] bg-[#0A0E16]/95 p-4 shadow-2xl backdrop-blur-3xl"
           >
-            <div className="flex flex-col space-y-1">
-              {navItems.map((item, idx) => {
+            <div className="flex flex-col gap-1.5">
+              {navItems.map((item, index) => {
                 const isActive = activeSection === item.id;
                 return (
                   <motion.a
                     key={item.id}
                     href={item.href}
-                    initial={shouldReduceMotion ? {} : { opacity: 0, x: -10 }}
+                    initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 + 0.05 }}
+                    transition={{ delay: index * 0.05, duration: 0.25 }}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavClick(item.href);
                     }}
-                    aria-current={isActive ? 'true' : undefined}
-                    className={`flex items-center justify-between rounded-2xl px-4 py-3 text-[13px] font-medium transition-colors ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-2xl text-[14px] font-medium transition-colors ${
                       isActive
-                        ? 'bg-white/[0.08] text-[#F2F4F7]'
-                        : 'text-[#8B95A3] hover:bg-white/[0.04] hover:text-[#F2F4F7]'
+                        ? 'bg-white/[0.08] text-[#F0F3F6] font-semibold'
+                        : 'text-[#A5AFBC] hover:bg-white/[0.04] hover:text-[#F0F3F6]'
                     }`}
                   >
                     <span>{item.label}</span>
-                    <ArrowUpRight className="size-3.5 opacity-60" />
+                    <span className="font-mono text-[10px] text-[#697586]">
+                      0{index + 1}
+                    </span>
                   </motion.a>
                 );
               })}
 
-              <div className="pt-2 border-t border-white/[0.06] flex items-center justify-between px-2">
-                <span className="font-mono text-[10px] text-[#707A89] uppercase tracking-wider">
-                  Language
-                </span>
+              <div className="pt-3 mt-2 border-t border-white/[0.08] flex items-center justify-between px-2">
                 <LanguageToggle />
+                <span className="font-mono text-[10px] text-[#697586]">
+                  THAILAND [GMT+7]
+                </span>
               </div>
             </div>
           </motion.div>

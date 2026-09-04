@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -8,22 +8,26 @@
 }
 
 :root {
-  --background: #090c12;
-  --surface: #0f141d;
-  --surface-elevated: #141a24;
-  --surface-hover: #19212d;
-  --text-primary: #f2f4f7;
-  --text-secondary: #a9b1bd;
-  --text-muted: #707a89;
-  --accent: #7890aa;
-  --accent-hover: #8fa5bd;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(143, 165, 189, 0.28);
-  --success: #75a58e;
+  --background: #080a0f;
+  --surface: #0d1119;
+  --surface-light: #e8edf2;
+  --surface-elevated: #121824;
+  --surface-hover: #161e2e;
+  --text-primary: #f0f3f6;
+  --text-secondary: #a5afbc;
+  --text-muted: #697586;
+  --text-light-section: #0a1019;
+  --accent: #7f9ab8;
+  --accent-light: #a6b9cc;
+  --border: rgba(255, 255, 255, 0.10);
+  --border-hover: rgba(127, 154, 184, 0.35);
+  --success: #78a68e;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -34,13 +38,15 @@ html {
 body {
   background-color: var(--background);
   color: var(--text-primary);
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
   font-family: var(--font-sans);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar - Precision Engineering */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -50,13 +56,26 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--surface-hover);
+  background: var(--surface-elevated);
   border-radius: 9999px;
   border: 1px solid var(--border);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+}
+
+/* Global Hero Heading Gradient Class */
+.hero-heading {
+  background: linear-gradient(
+    180deg,
+    #F3F6F8 0%,
+    #A6B9CC 52%,
+    #65798E 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Hero Technical Grid */
@@ -67,35 +86,53 @@ body {
   background-size: 64px 64px;
 }
 
-/* Subtle CSS Noise Texture Overlay */
+/* Subtle Noise Overlay */
 .bg-noise-texture {
   background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
-/* Performant Infinite Marquee Animation - Pure CSS */
-@keyframes portfolio-marquee {
+/* Dual-Row Seamless Infinite Marquee Keyframes */
+@keyframes marquee-left {
   from {
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-33.333%, 0, 0);
   }
 }
 
-.animate-portfolio-marquee {
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
   display: flex;
   width: max-content;
-  animation: portfolio-marquee 34s linear infinite;
+  animation: marquee-left 34s linear infinite;
   will-change: transform;
 }
 
-.animate-portfolio-marquee:hover,
-.animate-portfolio-marquee:focus-within {
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 34s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-left:focus-within,
+.animate-marquee-right:hover,
+.animate-marquee-right:focus-within {
   animation-play-state: paused;
 }
 
-/* Horizontal Gradient Edge Mask for Seamless Marquee */
+/* Horizontal Gradient Edge Mask for Marquee Viewport */
 .marquee-mask {
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
@@ -107,14 +144,14 @@ body {
   outline-offset: 3px;
 }
 
-
 /* Respect Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .animate-portfolio-marquee {
+  .animate-marquee-left,
+  .animate-marquee-right {
     animation: none !important;
     transform: none !important;
   }

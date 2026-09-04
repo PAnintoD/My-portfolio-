@@ -96,22 +96,22 @@ export default function CustomCursor() {
     <div className="pointer-events-none fixed inset-0 z-[999999] overflow-hidden select-none">
       {/* Precision Follower Ring */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none rounded-full border border-[#7890AA]/45 flex items-center justify-center overflow-hidden"
+        className="fixed top-0 left-0 pointer-events-none rounded-full border border-[#7F9AB8]/45 flex items-center justify-center overflow-hidden"
         animate={{
           x: mousePosition.x - ringSize / 2,
           y: mousePosition.y - ringSize / 2,
           width: ringSize,
           height: ringSize,
           backgroundColor: cursorText
-            ? 'rgba(15, 20, 29, 0.85)'
+            ? 'rgba(13, 17, 25, 0.90)'
             : isHovered
-            ? 'rgba(120, 144, 170, 0.08)'
+            ? 'rgba(127, 154, 184, 0.10)'
             : 'transparent',
           borderColor: cursorText
-            ? 'rgba(120, 144, 170, 0.65)'
+            ? 'rgba(127, 154, 184, 0.70)'
             : isHovered
-            ? 'rgba(120, 144, 170, 0.75)'
-            : 'rgba(120, 144, 170, 0.35)',
+            ? 'rgba(127, 154, 184, 0.80)'
+            : 'rgba(127, 154, 184, 0.35)',
           scale: isClicking ? 0.9 : 1
         }}
         transition={{

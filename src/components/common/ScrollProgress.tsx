@@ -30,7 +30,7 @@ export default function ScrollProgress() {
       <div className="md:hidden fixed top-0 left-0 right-0 h-[2px] z-50 pointer-events-none bg-white/[0.04]">
         <motion.div
           style={{ scaleX }}
-          className="h-full bg-[#7890AA] origin-left"
+          className="h-full bg-[#7F9AB8] origin-left"
         />
       </div>
 
@@ -38,7 +38,7 @@ export default function ScrollProgress() {
       <div className="hidden md:block fixed top-0 right-0 bottom-0 w-[2px] z-50 pointer-events-none bg-white/[0.04]">
         <motion.div
           style={{ scaleY }}
-          className="w-full bg-[#7890AA] origin-top opacity-70"
+          className="w-full bg-[#7F9AB8] origin-top opacity-75"
         />
       </div>
     </>

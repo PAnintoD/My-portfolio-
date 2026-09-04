@@ -1,117 +1,121 @@
-'use client';
+﻿'use client';
 
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, MouseEvent } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
+import { personalInfo } from '../../data/portfolioData';
 import { useLanguage } from '../../context/LanguageContext';
-import { personalInfo, uiContent } from '../../data/portfolioData';
-import IdentityCard from '../about/IdentityCard';
-import AnimatedCounter from '../about/AnimatedCounter';
-import { MapPin } from 'lucide-react';
+import ContactButton from '../common/ContactButton';
+import AboutDecorations from '../about/AboutDecorations';
+import ScrollText from '../about/ScrollText';
+import { usePointerType } from '../../hooks/usePointerType';
 
 export default function AboutSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
+  const { isFine } = usePointerType();
+
+  const [pointerOffset, setPointerOffset] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+    if (shouldReduceMotion || !isFine) return;
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    const x = (clientX / innerWidth - 0.5) * 2;
+    const y = (clientY / innerHeight - 0.5) * 2;
+    setPointerOffset({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setPointerOffset({ x: 0, y: 0 });
+  };
+
+  const aboutText =
+    language === 'th'
+      ? "ผมคือ ธนภูมิ สีแดง นักพัฒนาที่มุ่งเน้นการลงมือสร้างจริงและแก้ปัญหาที่เกิดขึ้นจริง เชื่อมต่อซอฟต์แวร์เข้ากับไมโครคอนโทรลเลอร์ IoT, ระบบตรวจจับภาพด้วย AI และการพัฒนาระบบอัตโนมัติที่เสถียรและตอบโจทย์งานจริง"
+      : "I’m a multidisciplinary developer who enjoys transforming real-world challenges into reliable digital systems. My work connects software, embedded hardware, automation, and AI vision to create practical products that are clear, maintainable, and built to last.";
 
   return (
     <section
       id="about"
-      className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#090C12] scroll-mt-28"
+      aria-label="About Me"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative min-h-screen overflow-hidden rounded-t-[40px] sm:rounded-t-[52px] md:rounded-t-[64px] bg-[#E8EDF2] px-5 sm:px-8 md:px-12 py-20 sm:py-24 md:py-32 text-[#0A1019] scroll-mt-28 flex flex-col justify-between"
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header with Number Reveal */}
+      {/* 4 Procedural 3D/SVG Decorative Objects */}
+      <AboutDecorations pointerOffset={pointerOffset} />
+
+      <div className="max-w-5xl mx-auto w-full relative z-10 my-auto flex flex-col items-center">
+        {/* Large ABOUT ME Heading with Horizontal Clip-Path Reveal */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-14"
+          initial={shouldReduceMotion ? { opacity: 0 } : { clipPath: 'inset(0% 100% 0% 0%)', opacity: 0 }}
+          whileInView={shouldReduceMotion ? { opacity: 1 } : { clipPath: 'inset(0% 0% 0% 0%)', opacity: 1 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8 md:mb-12 text-center"
         >
-          <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#7890AA] tracking-[0.2em] uppercase">
-            <span>{t(uiContent.about.sectionTag)}</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#F2F4F7] mb-3">
-            {t(uiContent.about.heading)}
+          <h2
+            className="font-display font-extrabold uppercase leading-none tracking-[-0.06em] text-center text-[clamp(3.5rem,12vw,170px)] select-none"
+            style={{
+              background: 'linear-gradient(180deg, #0A1019 0%, #526273 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}
+          >
+            ABOUT ME
           </h2>
-          <div className="w-12 h-[2px] bg-[#7890AA]/40 rounded-full" />
         </motion.div>
 
-        {/* Grid: Profile Identity & Bio */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
-          {/* Profile Identity Card with 3D perspective */}
-          <motion.div
-            initial={{ opacity: 0, x: -25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5"
-          >
-            <IdentityCard />
-          </motion.div>
+        {/* Word-by-Word Scroll-Driven Opacity Animation */}
+        <ScrollText
+          text={aboutText}
+          className="max-w-[780px] text-center font-sans font-medium leading-[1.35] text-[clamp(1.25rem,3vw,2.35rem)] mx-auto text-[#0A1019] mb-14 md:mb-16"
+        />
 
-          {/* Bio Text & Mindset */}
-          <motion.div
-            initial={{ opacity: 0, x: 25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 flex flex-col justify-center space-y-5"
-          >
-            <div className="text-[#A9B1BD] text-xs font-mono tracking-wider uppercase flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-[#7890AA]" />
-              <span>{t(uiContent.about.curiousMind)}</span>
-            </div>
-
-            {personalInfo.aboutBio.map((paragraph, index) => (
-              <motion.p
-                key={index}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-[#A9B1BD] text-sm sm:text-base leading-relaxed"
-              >
-                {t(paragraph)}
-              </motion.p>
-            ))}
-
-            {/* Location & Status Chips */}
-            <div className="pt-2 flex flex-wrap gap-2.5">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F141D] border border-white/[0.08] text-xs text-[#A9B1BD]">
-                <MapPin className="size-3.5 text-[#707A89] shrink-0" />
-                <span>{t(personalInfo.location)}</span>
-              </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F141D] border border-white/[0.08] text-xs text-[#A9B1BD]">
-                <span className="size-1.5 rounded-full bg-[#75A58E] shrink-0" />
-                <span>{t(personalInfo.status)}</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Key Statistics with Animated Counter */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {personalInfo.stats.map((stat, idx) => (
+        {/* Three Verified Engineering Statistics */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full max-w-3xl mb-14">
+          {personalInfo.stats.map((stat, index) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 15 }}
+              key={index}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.45, delay: idx * 0.08 }}
-              className="p-5 rounded-2xl bg-[#0F141D] border border-white/[0.08] hover:border-white/[0.16] transition-colors duration-200 shadow-lg shadow-black/20"
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: [0.22, 1, 0.36, 1]
+              }}
+              className="flex flex-col items-center text-center p-6 rounded-3xl bg-white/70 border border-black/[0.06] shadow-sm backdrop-blur-sm"
             >
-              <div className="text-2xl sm:text-3xl font-bold text-[#F2F4F7] mb-1 font-mono tracking-tight">
-                <AnimatedCounter value={stat.value} />
-              </div>
-              <div className="text-xs font-medium text-[#A9B1BD] mb-1">
+              <span className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A1019] mb-2">
+                {stat.value}
+              </span>
+              <span className="font-mono text-[11px] sm:text-[12px] font-semibold tracking-wider text-[#2E3C4D] uppercase">
+                {index === 0
+                  ? 'SOFTWARE SYSTEMS'
+                  : index === 1
+                  ? 'AI VISION & AUTOMATION'
+                  : 'EMBEDDED & IoT'}
+              </span>
+              <span className="font-mono text-[10px] text-[#697586] mt-1">
                 {t(stat.label)}
-              </div>
-              {stat.sublabel && (
-                <div className="text-[11px] font-mono text-[#707A89]">
-                  {t(stat.sublabel)}
-                </div>
-              )}
+              </span>
             </motion.div>
           ))}
         </div>
+
+        {/* Contact CTA */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <ContactButton
+            label="START A CONVERSATION"
+            className="border-black/10 bg-[#0A1019] text-[#F0F3F6] hover:text-[#080A0F]"
+          />
+        </motion.div>
       </div>
     </section>
   );
