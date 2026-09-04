@@ -3,6 +3,8 @@
 import React from 'react';
 import LoadingScreen from '../components/common/LoadingScreen';
 import CustomCursor from '../components/common/CustomCursor';
+import ScrollProgress from '../components/common/ScrollProgress';
+import FloatingNavbar from '../components/hero/FloatingNavbar';
 import PortfolioHero from '../components/hero/PortfolioHero';
 import TechnologyMarquee from '../components/marquee/TechnologyMarquee';
 import AboutSection from '../components/sections/AboutSection';
@@ -14,22 +16,28 @@ import Footer from '../components/common/Footer';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#090c12] text-[#f2f4f7] flex flex-col selection:bg-[#7890aa]/30 selection:text-[#f2f4f7] overflow-x-hidden">
-      {/* HUD Boot Sequence / Loading Screen */}
+    <div className="relative min-h-screen bg-[#090C12] text-[#F2F4F7] flex flex-col selection:bg-[#7890AA]/30 selection:text-[#F2F4F7] overflow-x-hidden">
+      {/* Cinematic Intro Calibration Sequence */}
       <LoadingScreen />
 
-      {/* Interactive Custom Follower Cursor (Desktop Only) */}
+      {/* Minimal Scroll Progress Indicator */}
+      <ScrollProgress />
+
+      {/* Precision Custom Cursor for Fine Pointer */}
       <CustomCursor />
+
+      {/* Persistent Floating Navigation */}
+      <FloatingNavbar />
 
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col">
         {/* Top Hero Section & Technology Marquee */}
-        <div className="w-full px-3 sm:px-5 md:px-8 pt-3 sm:pt-4 md:pt-6">
+        <div className="w-full px-3 sm:px-5 md:px-8 pt-20 sm:pt-24 md:pt-28">
           <PortfolioHero />
           <TechnologyMarquee />
         </div>
 
-        {/* Existing Profile, Portfolio & Contact Sections */}
+        {/* Existing Profile, Skills System Map, Projects Showcase & Contact */}
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
