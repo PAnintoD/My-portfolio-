@@ -108,7 +108,7 @@ export default function ContactSection() {
       id="contact"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#090C12]"
+      className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#090C12] scroll-mt-28"
     >
       {/* Soft Pointer Spotlight Effect on Desktop */}
       <div
@@ -134,8 +134,7 @@ export default function ContactSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <div className="flex items-center justify-center gap-2 mb-2 font-mono text-xs text-[#707A89] tracking-[0.2em] uppercase">
-            <span className="text-[#7890AA]">{'// 05'}</span>
+          <div className="flex items-center justify-center gap-2 mb-2 font-mono text-xs text-[#7890AA] tracking-[0.2em] uppercase">
             <span>{t(uiContent.contact.sectionTag)}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F2F4F7] mb-3">

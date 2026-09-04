@@ -107,13 +107,6 @@ body {
   outline-offset: 3px;
 }
 
-/* Custom cursor support on desktop */
-@media (pointer: fine) {
-  .custom-cursor-enabled,
-  .custom-cursor-enabled * {
-    cursor: none !important;
-  }
-}
 
 /* Respect Reduced Motion */
 @media (prefers-reduced-motion: reduce) {

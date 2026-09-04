@@ -29,9 +29,6 @@ export default function CustomCursor() {
   useEffect(() => {
     if (!hasFinePointer || shouldReduceMotion) return;
 
-    // Only hide native cursor once custom cursor successfully mounts
-    document.documentElement.classList.add('custom-cursor-enabled');
-
     const onMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
@@ -80,7 +77,6 @@ export default function CustomCursor() {
     document.addEventListener('mouseenter', onMouseEnter);
 
     return () => {
-      document.documentElement.classList.remove('custom-cursor-enabled');
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mousemove', handleHoverCheck);
       window.removeEventListener('mousedown', onMouseDown);

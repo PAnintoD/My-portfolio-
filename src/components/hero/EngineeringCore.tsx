@@ -18,10 +18,10 @@ export default function EngineeringCore() {
   // Nodes configuration on orbital rings
   const nodeLabels = useMemo(
     () => [
-      { text: 'WEB SYSTEMS', pos: [2.1, 0.4, 0] as [number, number, number], tag: '01' },
-      { text: 'EMBEDDED & IoT', pos: [-2.0, 0.6, 0.5] as [number, number, number], tag: '02' },
-      { text: 'AI VISION', pos: [0.5, 1.9, -0.6] as [number, number, number], tag: '03' },
-      { text: 'AUTOMATION', pos: [-0.6, -1.9, 0.6] as [number, number, number], tag: '04' }
+      { text: 'WEB SYSTEMS', pos: [1.35, 0.35, 0] as [number, number, number], tag: '01' },
+      { text: 'EMBEDDED & IoT', pos: [-1.25, 0.45, 0.4] as [number, number, number], tag: '02' },
+      { text: 'AI VISION', pos: [0.35, 1.35, -0.4] as [number, number, number], tag: '03' },
+      { text: 'AUTOMATION', pos: [-0.35, -1.35, 0.4] as [number, number, number], tag: '04' }
     ],
     []
   );

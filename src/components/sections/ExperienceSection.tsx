@@ -25,7 +25,7 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={containerRef}
-      className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#090C12]"
+      className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#090C12] scroll-mt-28"
     >
       <div className="max-w-5xl mx-auto">
         {/* Section Header with Section Number */}
@@ -36,8 +36,7 @@ export default function ExperienceSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
-          <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#707A89] tracking-[0.2em] uppercase">
-            <span className="text-[#7890AA]">{'// 04'}</span>
+          <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#7890AA] tracking-[0.2em] uppercase">
             <span>{t(uiContent.experience.sectionTag)}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#F2F4F7] mb-3">
@@ -50,14 +49,14 @@ export default function ExperienceSection() {
         </motion.div>
 
         {/* Vertical Timeline Track Container */}
-        <div className="relative pl-6 sm:pl-10 md:pl-12 space-y-12">
+        <div className="relative space-y-12">
           {/* Static Background Track */}
-          <div className="absolute left-[11px] sm:left-[19px] md:left-[23px] top-4 bottom-4 w-[2px] bg-white/[0.08]" />
+          <div className="absolute left-[15px] top-4 bottom-4 w-[2px] bg-white/[0.08]" />
 
           {/* Animated Dynamic Drawing Track */}
           <motion.div
             style={{ scaleY: lineHeight }}
-            className="absolute left-[11px] sm:left-[19px] md:left-[23px] top-4 bottom-4 w-[2px] bg-[#7890AA] origin-top opacity-80 motion-reduce:hidden"
+            className="absolute left-[15px] top-4 bottom-4 w-[2px] bg-[#7890AA] origin-top opacity-80 motion-reduce:hidden"
           />
 
           {experiences.map((item, index) => {
@@ -71,10 +70,10 @@ export default function ExperienceSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="relative group"
+                className="relative flex items-start gap-4 sm:gap-6 group"
               >
                 {/* Timeline Interactive Node */}
-                <div className="absolute -left-[30px] sm:-left-[47px] md:-left-[55px] top-2 flex items-center justify-center">
+                <div className="relative z-10 shrink-0 w-8 flex justify-center mt-2">
                   <div className="size-8 rounded-full bg-[#0F141D] border border-[#7890AA]/40 flex items-center justify-center transition-all duration-300 group-hover:border-[#7890AA] group-hover:scale-110 shadow-lg shadow-black/40">
                     {isWork ? (
                       <Briefcase className="size-3.5 text-[#7890AA]" />
@@ -91,7 +90,7 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Timeline Content Card */}
-                <div className="p-6 sm:p-7 rounded-3xl bg-[#0F141D] border border-white/[0.08] hover:border-white/[0.18] transition-all duration-300 shadow-xl shadow-black/30">
+                <div className="flex-1 min-w-0 p-6 sm:p-7 rounded-3xl bg-[#0F141D] border border-white/[0.08] hover:border-white/[0.18] transition-all duration-300 shadow-xl shadow-black/30">
                   {/* Card Header */}
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                     <div className="flex items-center gap-2.5">

@@ -104,7 +104,7 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#090C12]"
+      className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#090C12] scroll-mt-28"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
@@ -115,8 +115,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14"
         >
-          <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#707A89] tracking-[0.2em] uppercase">
-            <span className="text-[#7890AA]">{'// 02'}</span>
+          <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#7890AA] tracking-[0.2em] uppercase">
             <span>{t(uiContent.skills.sectionTag)}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#F2F4F7] mb-3">
