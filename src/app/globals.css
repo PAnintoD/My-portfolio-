@@ -1,22 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
-  --font-display: "Manrope", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-sans: var(--font-sans), "Inter", sans-serif;
+  --font-display: var(--font-display), "Manrope", sans-serif;
+  --font-mono: var(--font-mono), "IBM Plex Mono", monospace;
 }
 
 :root {
-  --background: #080a0f;
+  --background: #090c12;
   --surface: #0d1119;
-  --surface-light: #e8edf2;
   --surface-elevated: #121824;
   --surface-hover: #161e2e;
-  --text-primary: #f0f3f6;
+  --text-primary: #f2f4f7;
   --text-secondary: #a5afbc;
   --text-muted: #697586;
-  --text-light-section: #0a1019;
   --accent: #7f9ab8;
   --accent-light: #a6b9cc;
   --border: rgba(255, 255, 255, 0.10);
@@ -24,26 +21,50 @@
   --success: #78a68e;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  background: #090c12;
   color-scheme: dark;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--text-primary);
+  margin: 0;
+  min-width: 320px;
   overflow-x: clip;
-  position: relative;
+  background: #090c12;
+  color: #f2f4f7;
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 /* Custom Scrollbar */
@@ -52,95 +73,48 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #090c12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--surface-elevated);
+  background: #121824;
   border-radius: 9999px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
-
-/* Global Hero Heading Gradient Class */
-.hero-heading {
-  background: linear-gradient(
-    180deg,
-    #F3F6F8 0%,
-    #A6B9CC 52%,
-    #65798E 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: #7f9ab8;
 }
 
 /* Hero Technical Grid */
 .bg-hero-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-/* Subtle Noise Overlay */
-.bg-noise-texture {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-/* Dual-Row Seamless Infinite Marquee Keyframes */
-@keyframes marquee-left {
+/* Slow spin animation for CSS visual */
+@keyframes spin-slow {
   from {
-    transform: translate3d(0, 0, 0);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate3d(-33.333%, 0, 0);
+    transform: rotate(360deg);
   }
 }
 
-@keyframes marquee-right {
-  from {
-    transform: translate3d(-33.333%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
 }
 
-.animate-marquee-left {
-  display: flex;
-  width: max-content;
-  animation: marquee-left 34s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee-right {
-  display: flex;
-  width: max-content;
-  animation: marquee-right 34s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee-left:hover,
-.animate-marquee-left:focus-within,
-.animate-marquee-right:hover,
-.animate-marquee-right:focus-within {
-  animation-play-state: paused;
-}
-
-/* Horizontal Gradient Edge Mask for Marquee Viewport */
-.marquee-mask {
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+.animate-spin-reverse-slow {
+  animation: spin-slow 55s linear infinite reverse;
 }
 
 /* Accessibility Focus Visible */
 *:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid #7f9ab8;
   outline-offset: 3px;
 }
 
@@ -150,10 +124,9 @@ body {
     scroll-behavior: auto;
   }
 
-  .animate-marquee-left,
-  .animate-marquee-right {
+  .animate-spin-slow,
+  .animate-spin-reverse-slow {
     animation: none !important;
-    transform: none !important;
   }
 
   *,

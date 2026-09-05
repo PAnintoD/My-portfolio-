@@ -26,11 +26,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     };
     if (project) {
       window.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
     }
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
     };
   }, [project, onClose]);
 

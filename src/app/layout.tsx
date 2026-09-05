@@ -108,7 +108,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${manrope.variable} ${ibmPlexMono.variable} bg-[#080A0F] text-[#F0F3F6] font-sans antialiased min-h-screen selection:bg-[#7F9AB8]/30 selection:text-[#F0F3F6]`}>
+      <body className={`${inter.variable} ${manrope.variable} ${ibmPlexMono.variable} bg-[#090c12] text-[#f2f4f7] font-sans antialiased min-h-screen selection:bg-[#7F9AB8]/30 selection:text-[#f2f4f7]`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>
